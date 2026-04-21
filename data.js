@@ -29,7 +29,7 @@ const PORTFOLIO = {
     { label: "role",     value: "Sysadmin / DevOps Engineer" },
     { label: "status",   value: "open to work", highlight: true },
     { label: "location", value: "Toledo, Castilla-La Mancha, Spain" },
-    { label: "stack",    value: "Linux · Docker · WireGuard · Bash · Go" },
+    { label: "stack",    value: "Linux · Docker · WireGuard · Bash" },
     { label: "lang",     value: "ES (native)  EN (professional)" },
   ],
 
