@@ -25,13 +25,12 @@ const PORTFOLIO = {
 
   // ── Terminal status card (hero) ────────────────────────────
   statusLines: [
-    { label: "user",     value: "MohamedKamil@spain" },
-    { label: "role",     value: "Sysadmin / DevOps Intern" },
+    { label: "user",     value: "mkamil@toledo" },
+    { label: "role",     value: "Sysadmin / DevOps Engineer" },
     { label: "status",   value: "open to work", highlight: true },
-    { label: "location", value: "Spain (Castilla-La Mancha)" },
-    { label: "stack",    value: "Linux · Docker · WireGuard · Bash · Networks" },
-    { label: "hours",    value: "500+ in production infrastructure" },
-    { label: "lang",     value: "ES (native)  EN (B2 Upper Intermediate)" },
+    { label: "location", value: "Toledo, Castilla-La Mancha, Spain" },
+    { label: "stack",    value: "Linux · Docker · WireGuard · Bash · Go" },
+    { label: "lang",     value: "ES (native)  EN (professional)" },
   ],
 
   // ── Experience timeline ────────────────────────────────────
@@ -39,7 +38,7 @@ const PORTFOLIO = {
     {
       role:    { en: "Cybersecurity Intern",     es: "Becario de Ciberseguridad" },
       org:     "SECCION9 CONSULTORIA SL",
-      period:  { en: "Mar 2026 — Present",       es: "Mar 2026 — Actualidad" },
+      period:  { en: "Mar 2026 — Jun 2026",       es: "Mar 2026 — Jun 2026" },
       tags:    ["WireGuard", "OpenVPN", "Nginx", "ModSecurity", "Bash", "PowerShell", "pfSense", "Fortinet", "Docker"],
       bullets: {
         en: [
@@ -48,17 +47,15 @@ const PORTFOLIO = {
           "Deployed Nginx + ModSecurity (OWASP CRS) WAF protecting 5+ internal web services, reducing malicious request throughput by over 90%.",
           "Automated client onboarding across Linux and Windows environments using custom Bash and PowerShell IaC scripts, cutting provisioning time from 45 minutes to under 10.",
           "Configured secure VPN tunnels integrating with corporate firewalls (pfSense, Fortinet, Cisco) and cloud providers (Ionos, Hetzner) for 3+ production environments.",
-          "Implemented network segmentation ensuring departmental isolation — finance, operations, and admin traffic fully separated at the tunnel level.",
-          "Completed 500+ hours of hands-on infrastructure work across real production systems."
+          "Implemented network segmentation ensuring departmental isolation — finance, operations, and admin traffic fully separated at the tunnel level."
         ],
         es: [
-          "Diseñé y desplegué un hub VPN híbrido (WireGuard + OpenVPN sobre TCP/443) proporcionando acceso remoto Zero Trust en más de 3 redes de PYMEs.",
-          "Construí y mantuve una pasarela VPN WireGuard para 40 usuarios simultáneos en un VPS de 1 EUR/mes con 800 MB de RAM y 1 vCPU, logrando 99.5% de uptime.",
-          "Desplegué WAF con Nginx + ModSecurity (OWASP CRS) protegiendo más de 5 servicios web internos, reduciendo el tráfico malicioso en más de un 90%.",
-          "Automaticé el onboarding de clientes en entornos Linux y Windows con scripts IaC en Bash y PowerShell, reduciendo el tiempo de provisioning de 45 minutos a menos de 10.",
-          "Configuré túneles VPN seguros integrándose con firewalls corporativos (pfSense, Fortinet, Cisco) y proveedores cloud (Ionos, Hetzner) en más de 3 entornos de producción.",
-          "Implementé segmentación de red garantizando aislamiento departamental — finanzas, operaciones y administración completamente separados a nivel de túnel.",
-          "Completé más de 500 horas de trabajo práctico en infraestructura de producción real."
+          "Disene y desplege un hub VPN hibrido (WireGuard + OpenVPN sobre TCP/443) proporcionando acceso remoto Zero Trust en mas de 3 redes de PYMEs.",
+          "Construi y mantuve una pasarela VPN WireGuard para 40 usuarios simultaneos en un VPS de 1 EUR/mes con 800 MB de RAM y 1 vCPU, logrando 99.5% de uptime.",
+          "Desplege WAF con Nginx + ModSecurity (OWASP CRS) protegiendo mas de 5 servicios web internos, reduciendo el trafico malicioso en mas de un 90%.",
+          "Automatice el onboarding de clientes en entornos Linux y Windows con scripts IaC en Bash y PowerShell, reduciendo el tiempo de provisioning de 45 minutos a menos de 10.",
+          "Configure tuneles VPN seguros integrandose con firewalls corporativos (pfSense, Fortinet, Cisco) y proveedores cloud (Ionos, Hetzner) en mas de 3 entornos de produccion.",
+          "Implemente segmentacion de red garantizando aislamiento departamental — finanzas, operaciones y administracion completamente separados a nivel de tunel."
         ]
       }
     },
@@ -210,6 +207,7 @@ const PORTFOLIO = {
     {
       id:    "oedon",
       name:  "Oedon PaaS",
+      subtitle: { en: "Lightweight Container Orchestration Platform", es: "Plataforma Ligera de Orquestacion de Contenedores" },
       short: {
         en: "Terminal-first, self-hosted PaaS for deploying containerised apps on minimal hardware. Manages 5+ services behind Nginx with auto-SSL, custom port knocking (Portero), automated backups to Telegram, and a single CLI entry point. Zero GUI dependencies — entire server state lives in two plain-text files.",
         es: "PaaS auto-alojada orientada al terminal para desplegar apps en contenedores sobre hardware modesto. Gestiona 5+ servicios detrás de Nginx con SSL automático, port knocking propio (Portero), backups automáticos a Telegram y un único punto de entrada CLI. Sin dependencias de GUI — todo el estado del servidor vive en dos archivos de texto plano."
@@ -265,6 +263,7 @@ Me frustraban herramientas como Nginx Proxy Manager que ocultan el error real de
     {
       id:    "cloudhub",
       name:  "CloudHub MVP",
+      subtitle: { en: "Multi-Site VPN Network Simulator", es: "Simulador de Red VPN Multi-Sede" },
       short: {
         en: "WireGuard-based VPN lab simulating a full SMB network: central hub VPS, 3 spoke offices, 1 remote worker, and a corporate server — all with split-tunneling and Containerlab orchestration. 10/10 automated tests pass on every deployment. Built as a proof-of-concept for SECCION9's managed cybersecurity service.",
         es: "Lab VPN basado en WireGuard que simula una red completa de PYME: hub central en VPS, 3 oficinas spoke, 1 teletrabajador y un servidor corporativo — con split-tunneling y orquestacion con Containerlab. 10/10 tests automaticos pasan en cada despliegue. Construido como prueba de concepto para el servicio de ciberseguridad gestionada de SECCION9."
@@ -315,6 +314,7 @@ Containerlab es una herramienta infravalorada para prototipar topologias de red 
     {
       id:    "seccion9-hub",
       name:  "Seccion9 Secure Hub",
+      subtitle: { en: "VPN Management Panel with REST API", es: "Panel de Gestion VPN con API REST" },
       short: {
         en: "Production VPN management solution for SMBs — WireGuard + OpenVPN dual-stack, web panel (FastAPI + React), JWT auth with bcrypt, QR code provisioning for mobile clients, and a terminal-based manager script. Full REST API with 7 endpoints. Deployed and tested in real client environments.",
         es: "Solucion de gestion VPN en produccion para PYMEs — WireGuard + OpenVPN dual-stack, panel web (FastAPI + React), autenticacion JWT con bcrypt, provisioning con QR para clientes moviles y script de gestion en terminal. API REST completa con 7 endpoints. Desplegado y probado en entornos reales de clientes."
@@ -361,6 +361,7 @@ Escribir la capa de gestion de WireGuard en Python puro (solo llamadas subproces
     {
       id:    "nano-paas",
       name:  "Nebula Nano-PaaS",
+      subtitle: { en: "Embedded Systems Monitor & Deployment Engine", es: "Monitor de Sistemas Embebido y Motor de Despliegue" },
       short: {
         en: "Ultra-lightweight self-hosted PaaS. Core system runs on under 20 MB of RAM. Features Nebula Pulse, a custom Go-based system monitor that replaced a Python+Netdata stack, cutting monitoring RAM usage from ~500 MB to ~10 MB — a 95% reduction. Predecessor to Oedon PaaS.",
         es: "PaaS auto-alojada ultra-ligera. El nucleo usa menos de 20 MB de RAM. Incluye Nebula Pulse, un monitor de sistema propio en Go que reemplazo un stack Python+Netdata, reduciendo el consumo de RAM de monitorizacion de ~500 MB a ~10 MB — una reduccion del 95%. Predecesor de Oedon PaaS."
@@ -420,7 +421,7 @@ Escribir una herramienta de monitorizacion en Go me obligo a aprender goroutines
       "nav.projects":    "Projects",
       "hero.greeting":   "whoami",
       "hero.role":       "Systems & DevOps Engineer",
-      "hero.bio":        "I build infrastructure that stays out of the way — self-hosted platforms, zero-trust VPN networks, and automation pipelines that replace manual work with reproducible scripts. Currently completing 500+ hours of hands-on cybersecurity infrastructure at SECCION9 while finishing my Computer Systems & Networks degree. Based in Spain, working remotely.",
+      "hero.bio":        "I build infrastructure that stays out of the way. Self-hosted platforms, zero-trust VPN networks, automation scripts — if it runs in a terminal, I'm probably already writing it. I kept 40 users connected through a VPN gateway on a 1 EUR server because constraints are more fun than budgets. Based in Toledo, finishing my CS degree, and looking for a team that cares about doing things right.",
       "hero.cta.email":  "Email me",
       "hero.cta.cv":     "Download CV",
       "hero.photo":      "Add your photo here",
@@ -441,7 +442,7 @@ Escribir una herramienta de monitorizacion en Go me obligo a aprender goroutines
       "nav.projects":    "Proyectos",
       "hero.greeting":   "whoami",
       "hero.role":       "Ingeniero de Sistemas y DevOps",
-      "hero.bio":        "Construyo infraestructuras que no se notan — plataformas auto-alojadas, redes VPN zero-trust y pipelines de automatizacion que reemplazan trabajo manual con scripts reproducibles. Actualmente completando mas de 500 horas de infraestructura de ciberseguridad en SECCION9 mientras termino mi grado en Sistemas Microinformaticos y Redes. Basado en Espana, trabajo en remoto.",
+      "hero.bio":        "Construyo infraestructuras que no se notan. Plataformas auto-alojadas, redes VPN zero-trust, scripts de automatizacion — si se ejecuta en un terminal, probablemente ya lo estoy escribiendo. Mantuve 40 usuarios conectados a traves de una pasarela VPN en un servidor de 1 EUR porque las restricciones son mas divertidas que los presupuestos. Basado en Toledo, terminando mi grado, y buscando un equipo al que le importe hacer las cosas bien.",
       "hero.cta.email":  "Escribeme",
       "hero.cta.cv":     "Descargar CV",
       "hero.photo":      "Anade tu foto aqui",

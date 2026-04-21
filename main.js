@@ -145,6 +145,7 @@
         <header class="proj-header">
           <div class="proj-title-row">
             <h3 class="proj-name">${proj.name}</h3>
+            ${proj.subtitle ? `<span class="proj-subtitle">${proj.subtitle[currentLang] || proj.subtitle.en}</span>` : ""}
             <div class="proj-header-actions">
               <a class="proj-icon-link" href="${proj.repo}" target="_blank" rel="noopener"
                  title="${t("btn.repo")}">
