@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohamed Kamil — Systems & DevOps</title>
+  <meta name="description" content="Portfolio of Mohamed Kamil El Kouarti — Systems Engineer, DevOps, Infrastructure. 500+ hours of production cybersecurity infrastructure. WireGuard, Docker, Linux, Bash." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#home">
+        <span class="logo-bracket">[</span>mk<span class="logo-bracket">]</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home"   data-i18n="nav.home">Home</a></li>
+        <li><a href="#resume" data-i18n="nav.resume">Resume</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+      </ul>
+      <button id="lang-toggle" aria-label="Toggle language">
+        <i class="fa-solid fa-language"></i>
+        <span id="lang-label">ES</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HOME ───────────────────────────────────────────────── -->
+  <section id="home">
+    <div class="hero-grid">
+
+      <div class="hero-text">
+        <p class="hero-pre"><span class="prompt">~/</span> <span class="cmd" data-i18n="hero.greeting">whoami</span></p>
+        <h1 class="hero-name">Mohamed Kamil<br /><span class="hero-surname">El Kouarti</span></h1>
+        <p class="hero-role" data-i18n="hero.role">Systems & DevOps Engineer</p>
+        <p class="hero-bio" data-i18n="hero.bio">
+          I build infrastructure that stays out of the way — self-hosted platforms,
+          zero-trust VPN networks, and automation pipelines that replace manual work
+          with reproducible scripts. Currently completing 500+ hours of hands-on
+          cybersecurity infrastructure at SECCION9 while finishing my Computer Systems
+          & Networks degree. Based in Spain, working remotely.
+        </p>
+
+        <div class="hero-cta">
+          <button class="btn btn-primary" id="email-copy-btn">
+            <i class="fa-solid fa-envelope"></i>
+            <span data-i18n="hero.cta.email">Email me</span>
+          </button>
+          <a class="btn btn-outline" id="cv-download-btn" href="assets/cv_en.pdf" download>
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <span data-i18n="hero.cta.cv">Download CV</span>
+          </a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/elkouarti/" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn
+          </a>
+          <a class="btn btn-outline" href="https://github.com/MohamedKamil-hub" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- Profile photo -->
+        <div class="hero-photo">
+          <img src="assets/pfp.png" alt="Mohamed Kamil El Kouarti" loading="eager" />
+        </div>
+
+        <!-- Terminal status card -->
+        <div class="hero-card">
+          <div class="card-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="card-title">status.sh</span>
+          </div>
+          <div class="card-body" id="status-terminal">
+            <!-- filled by JS -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── RESUME ──────────────────────────────────────────────── -->
+  <section id="resume">
+    <div class="section-header">
+      <span class="section-tag">02</span>
+      <h2 data-i18n="resume.title">Resume</h2>
+    </div>
+
+    <div class="resume-grid">
+
+      <!-- Experience -->
+      <div class="resume-col">
+        <h3 class="col-label" data-i18n="resume.exp">Experience</h3>
+        <div class="timeline" id="timeline-exp">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="resume-col">
+        <h3 class="col-label" data-i18n="resume.edu">Education</h3>
+        <div class="timeline" id="timeline-edu">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Certifications -->
+    <div class="certs-block">
+      <h3 class="col-label" data-i18n="resume.certs">Certifications</h3>
+      <div class="certs-grid" id="certs-grid">
+        <!-- filled by JS -->
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="skills-block">
+      <h3 class="col-label" data-i18n="resume.skills">Skills</h3>
+      <div class="skills-grid" id="skills-grid">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ────────────────────────────────────────────── -->
+  <section id="projects">
+    <div class="section-header">
+      <span class="section-tag">03</span>
+      <h2 data-i18n="projects.title">Projects</h2>
+    </div>
+    <div class="projects-grid" id="projects-grid">
+      <!-- filled by JS -->
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer id="footer">
+    <p>
+      <span class="prompt">~/</span>
+      <span data-i18n="footer.made">Built by</span>
+      <strong>Mohamed Kamil</strong> — 2026
+    </p>
+    <p class="footer-links">
+      <a href="mailto:kouartimohamedkamil@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/elkouarti/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/MohamedKamil-hub" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://x.com/kamilka_hub" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.credly.com/users/mohamed-kamil-el-kouarti-mechhidan" target="_blank" title="Credly"><i class="fa-solid fa-certificate"></i></a>
+    </p>
+  </footer>
+
+  <!-- ── MODAL ──────────────────────────────────────────────── -->
+  <div id="modal-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-dots">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        </div>
+        <span class="modal-title-text" id="modal-title"></span>
+        <button class="modal-close" id="modal-close" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TOAST ──────────────────────────────────────────────── -->
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
