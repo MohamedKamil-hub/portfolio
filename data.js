@@ -25,37 +25,37 @@ const PORTFOLIO = {
 
   // ── Terminal status card (hero) ────────────────────────────
   statusLines: [
-    { label: "user",     value: "mkamil@toledo" },
-    { label: "role",     value: "Sysadmin / DevOps Engineer" },
-    { label: "status",   value: "open to work", highlight: true },
+    { label: "user",     value: "kamil@toledo" },
+    { label: "role",     value: "Infrastructure Engineer", highlight: false },
+    { label: "status",   value: "freelance · open to roles", highlight: true },
     { label: "location", value: "Toledo, Castilla-La Mancha, Spain" },
-    { label: "stack",    value: "Linux · Docker · WireGuard · Bash" },
+    { label: "stack",    value: "WireGuard · Bash · Python · Nginx" },
     { label: "lang",     value: "ES (native)  EN (professional)" },
   ],
 
   // ── Experience timeline ────────────────────────────────────
   experience: [
     {
-      role:    { en: "Cybersecurity Intern",     es: "Becario de Ciberseguridad" },
+      role:    { en: "VPN & Infrastructure Engineer",     es: "Ingeniero de VPN e Infraestructura" },
       org:     "SECCION9 CONSULTORIA SL",
       period:  { en: "Mar 2026 — Jun 2026",       es: "Mar 2026 — Jun 2026" },
-      tags:    ["WireGuard", "OpenVPN", "Nginx", "ModSecurity", "Bash", "PowerShell", "pfSense", "Fortinet", "Docker"],
+      tags:    ["WireGuard", "OpenVPN", "Nginx", "Bash", "PowerShell", "Python", "OPNsense", "iptables", "Fail2ban", "Restic"],
       bullets: {
         en: [
-          "Designed and deployed a hybrid VPN hub (WireGuard + OpenVPN over TCP/443) providing Zero Trust remote access across 3+ SMB client networks.",
-          "Built and maintained a WireGuard VPN gateway handling 40 simultaneous users on a 1 EUR/month VPS with 800 MB RAM and 1 vCPU, achieving 99.5% uptime.",
-          "Deployed Nginx + ModSecurity (OWASP CRS) WAF protecting 5+ internal web services, reducing malicious request throughput by over 90%.",
-          "Automated client onboarding across Linux and Windows environments using custom Bash and PowerShell IaC scripts, cutting provisioning time from 45 minutes to under 10.",
-          "Configured secure VPN tunnels integrating with corporate firewalls (pfSense, Fortinet, Cisco) and cloud providers (Ionos, Hetzner) for 3+ production environments.",
+          "Built and maintained a WireGuard VPN gateway serving 40 simultaneous clients on a 1 EUR/month VPS (800 MB RAM, 1 vCPU) — no bottlenecks, under 50 ms latency.",
+          "Designed a hybrid VPN hub (WireGuard + OpenVPN over TCP/443) providing Zero Trust remote access across 3+ SMB client networks, bypassing restrictive firewalls.",
+          "Developed a lightweight VPN management panel from scratch: pure Bash + Python + vanilla JS + Nginx, no Docker or heavy frameworks — runs on a 512 MB VPS. Features RBAC (admin/tecnico/viewer), JWT auth with bcrypt, brute-force protection, audit logging, client QR provisioning, site-to-site (hub-and-spoke), and real-time traffic metrics.",
+          "Automated client onboarding across Linux and Windows using custom Bash and PowerShell scripts, cutting provisioning time from ~45 minutes to under 10.",
+          "Collaborated with the WAF team (Nginx + ModSecurity for WordPress) and the backup team (Restic-based backup system) across a 20-person, 3-team structure.",
           "Implemented network segmentation ensuring departmental isolation — finance, operations, and admin traffic fully separated at the tunnel level."
         ],
         es: [
-          "Disene y desplege un hub VPN hibrido (WireGuard + OpenVPN sobre TCP/443) proporcionando acceso remoto Zero Trust en mas de 3 redes de PYMEs.",
-          "Construi y mantuve una pasarela VPN WireGuard para 40 usuarios simultaneos en un VPS de 1 EUR/mes con 800 MB de RAM y 1 vCPU, logrando 99.5% de uptime.",
-          "Desplege WAF con Nginx + ModSecurity (OWASP CRS) protegiendo mas de 5 servicios web internos, reduciendo el trafico malicioso en mas de un 90%.",
-          "Automatice el onboarding de clientes en entornos Linux y Windows con scripts IaC en Bash y PowerShell, reduciendo el tiempo de provisioning de 45 minutos a menos de 10.",
-          "Configure tuneles VPN seguros integrandose con firewalls corporativos (pfSense, Fortinet, Cisco) y proveedores cloud (Ionos, Hetzner) en mas de 3 entornos de produccion.",
-          "Implemente segmentacion de red garantizando aislamiento departamental — finanzas, operaciones y administracion completamente separados a nivel de tunel."
+          "Construí y mantuve una pasarela VPN WireGuard para 40 clientes simultáneos en un VPS de 1 EUR/mes (800 MB RAM, 1 vCPU) — sin cuellos de botella, menos de 50 ms de latencia.",
+          "Diseñé un hub VPN híbrido (WireGuard + OpenVPN sobre TCP/443) proporcionando acceso remoto Zero Trust en más de 3 redes de PYMEs, eludiendo firewalls restrictivos.",
+          "Desarrollé un panel de gestión VPN desde cero: Bash puro + Python + vanilla JS + Nginx, sin Docker ni frameworks pesados — funciona en un VPS de 512 MB. Incluye RBAC, autenticación JWT con bcrypt, protección anti-fuerza bruta, auditoría, provisioning con QR, site-to-site y métricas de tráfico en tiempo real.",
+          "Automaticé el onboarding de clientes en Linux y Windows con scripts Bash y PowerShell, reduciendo el tiempo de provisioning de ~45 minutos a menos de 10.",
+          "Colaboré con el equipo de WAF (Nginx + ModSecurity para WordPress) y el equipo de backups (sistema basado en Restic) en una estructura de 3 equipos y 20 personas.",
+          "Implementé segmentación de red garantizando aislamiento departamental — finanzas, operaciones y administración completamente separados a nivel de túnel."
         ]
       }
     },
@@ -83,7 +83,7 @@ const PORTFOLIO = {
   education: [
     {
       degree: { en: "Vocational Training — Computer Systems & Networks (SMR)", es: "FP Grado Medio — Sistemas Microinformáticos y Redes (SMR)" },
-      org:    "thePower Business School",
+      org:    "Prometeo by the Power",
       period: { en: "Sep 2024 — Jul 2026", es: "Sep 2024 — Jul 2026" },
     },
   ],
@@ -168,25 +168,24 @@ const PORTFOLIO = {
     {
       group: { en: "Networking & Security", es: "Redes y Seguridad" },
       items: [
-        { name: "WireGuard",   icon: "fa-solid fa-shield-halved" },
-        { name: "OpenVPN",     icon: "fa-solid fa-lock" },
-        { name: "pfSense",     icon: "fa-solid fa-fire" },
-        { name: "Fortinet",    icon: "fa-solid fa-wall-brick" },
-        { name: "Nginx",       icon: "fa-solid fa-globe" },
-        { name: "Fail2Ban",    icon: "fa-solid fa-ban" },
-        { name: "ModSecurity", icon: "fa-solid fa-shield" },
-        { name: "UFW",         icon: "fa-solid fa-filter" },
+        { name: "WireGuard",  icon: "fa-solid fa-shield-halved" },
+        { name: "OpenVPN",    icon: "fa-solid fa-lock" },
+        { name: "OPNsense",   icon: "fa-solid fa-fire" },
+        { name: "Nginx",      icon: "fa-solid fa-globe" },
+        { name: "Fail2Ban",   icon: "fa-solid fa-ban" },
+        { name: "iptables",   icon: "fa-solid fa-filter" },
+        { name: "UFW",        icon: "fa-solid fa-shield" },
       ]
     },
     {
-      group: { en: "Infrastructure & DevOps", es: "Infraestructura y DevOps" },
+      group: { en: "Infrastructure & Automation", es: "Infraestructura y Automatización" },
       items: [
-        { name: "Docker",         icon: "fa-brands fa-docker" },
-        { name: "Docker Compose", icon: "fa-brands fa-docker" },
         { name: "Bash",           icon: "fa-solid fa-terminal" },
         { name: "PowerShell",     icon: "fa-brands fa-windows" },
+        { name: "systemd",        icon: "fa-solid fa-gears" },
         { name: "Git",            icon: "fa-brands fa-git-alt" },
         { name: "GitHub Actions", icon: "fa-brands fa-github" },
+        { name: "Restic",         icon: "fa-solid fa-hard-drive" },
         { name: "AWS",            icon: "fa-brands fa-aws" },
       ]
     },
@@ -194,8 +193,8 @@ const PORTFOLIO = {
       group: { en: "Development", es: "Desarrollo" },
       items: [
         { name: "Python",     icon: "fa-brands fa-python" },
-        { name: "Go",         icon: "fa-solid fa-code" },
         { name: "FastAPI",    icon: "fa-solid fa-bolt" },
+        { name: "Go",         icon: "fa-solid fa-code" },
         { name: "JavaScript", icon: "fa-brands fa-js" },
         { name: "HTML/CSS",   icon: "fa-brands fa-html5" },
       ]
@@ -316,45 +315,70 @@ Containerlab es una herramienta infravalorada para prototipar topologias de red 
       name:  "Seccion9 Secure Hub",
       subtitle: { en: "VPN Management Panel with REST API", es: "Panel de Gestion VPN con API REST" },
       short: {
-        en: "Production VPN management solution for SMBs — WireGuard + OpenVPN dual-stack, web panel (FastAPI + React), JWT auth with bcrypt, QR code provisioning for mobile clients, and a terminal-based manager script. Full REST API with 7 endpoints. Deployed and tested in real client environments.",
-        es: "Solucion de gestion VPN en produccion para PYMEs — WireGuard + OpenVPN dual-stack, panel web (FastAPI + React), autenticacion JWT con bcrypt, provisioning con QR para clientes moviles y script de gestion en terminal. API REST completa con 7 endpoints. Desplegado y probado en entornos reales de clientes."
+        en: "Production VPN management solution for SMBs — WireGuard + OpenVPN dual-stack, web panel (FastAPI + vanilla JS), JWT auth with bcrypt, QR code provisioning for mobile clients, and a terminal-based manager script. Full REST API with 7 endpoints. No Docker, no React, no SQLite — pure Bash + Python + Nginx, runs on a 512 MB VPS.",
+        es: "Solucion de gestion VPN en produccion para PYMEs — WireGuard + OpenVPN dual-stack, panel web (FastAPI + vanilla JS), autenticacion JWT con bcrypt, provisioning con QR para clientes moviles y script de gestion en terminal. API REST completa con 7 endpoints. Sin Docker ni frameworks pesados — Bash puro + Python + Nginx en un VPS de 512 MB."
       },
-      tags: ["WireGuard", "OpenVPN", "FastAPI", "React", "Python", "Docker", "Nginx"],
+      tags: ["WireGuard", "OpenVPN", "FastAPI", "Python", "Nginx", "Bash", "iptables", "systemd"],
       repo: "https://github.com/MohamedKamil-hub/Seccion9-Secure-Hub",
       notes: {
         en: `
 ## What it solves
 SMBs with restrictive firewalls (Cisco ASA, Fortinet, SonicWall) cannot use WireGuard's UDP. OpenVPN over TCP/443 bypasses this — it looks like HTTPS traffic.
 
-## Panel architecture
-- **Backend**: FastAPI + Python. Full REST API with 7 endpoints: login, list clients, add/delete, download .conf, generate QR, server status.
-- **Auth**: JWT with bcrypt password hashing. 8-hour session tokens.
-- **WireGuard layer**: Pure Python \`subprocess\` calls to \`wg\` and \`wg-quick\`. Direct manipulation of \`wg0.conf\` + hot-apply with \`wg set\`. No third-party WireGuard libraries.
-- **Frontend**: React SPA, deployed as static files via Nginx.
-- **QR provisioning**: \`qrcode\` library generates scannable images for mobile WireGuard app — onboarding a mobile user takes under 2 minutes.
+## Architecture & design choices
+- **No bloated dependencies** — No Docker, no React, no SQLite, no OpenVPN GUI. Pure Bash + Python + vanilla JS + Nginx. Runs on a 512 MB VPS.
+- **Dynamic scaling** — Automatically detects available RAM and adjusts uvicorn workers, memory limits, and cache TTLs. Thoughtful for low-end VPS.
+- **Single-file state** — JSON files for users, sites, invites, and panel settings. No external DB. Atomic writes (*.tmp + rename) prevent corruption.
+- **In-memory metrics & audit** — Ring buffers sized by RAM. On a small VPS you still get hours of traffic history without disk I/O. A background thread polls wg show every 30 seconds to compute deltas.
+- **WireGuard data caching** — wg_cache.py centralises expensive wg show calls and caches them with a RAM-scaled TTL — avoids hammering the kernel.
+- **Idempotent installer** — install.sh can be run multiple times. Preserves existing users, certs, and WireGuard keys. Uses iptables -C checks to avoid duplicate rules.
+
+## Security
+- No default passwords — installer forces a strong admin password and generates a random SECRET_KEY via openssl rand -hex 32.
+- bcrypt password hashing with salt rounds = 12.
+- JWT access tokens with short configurable expiry.
+- Brute-force protection — in-memory sliding window + lockout per IP.
+- Fail2ban integration — jail for the panel's login endpoint (401s from Nginx logs).
+- Input sanitisation — sanitize.py validates client names, subnet CIDRs, interface names, tokens, DNS lists. Rejects path traversal and shell metacharacters.
+- Audit log — every sensitive action logged with username, role, action, target, and client IP.
+
+## Functional completeness
+- Client management — add/delete clients, download .conf or QR code, split-tunnel or full-tunnel.
+- Invite system — JWT-signed, single-use links with expiry. Public onboarding page with QR code.
+- Site-to-site (PYMEs) — register remote gateways (Linux or Windows), auto-generate WireGuard configs, PowerShell script for Windows NAT.
+- Multi-user RBAC — admin, tecnico, viewer.
+- Backup/restore — backup.sh packs .env, data/, and wg0.conf. restore.sh unpacks before a fresh install.
+
+## Performance
+40 simultaneous clients, no bottleneck, under 50 ms latency — on 800 MB RAM and 1 vCPU.
 
 ## Terminal fallback
 \`wg-manager.sh\` — for when you are on the server via SSH and don't want to open a browser. Interactive menu, same functionality as the panel.
-
-## Lesson
-Writing the WireGuard management layer in pure Python without any library (just subprocess calls to the wg binary) gave me a deep understanding of how WireGuard peers work under the hood. AllowedIPs, key rotation, hot config apply — all manual.
         `,
         es: `
 ## Que resuelve
 Las PYMEs con firewalls restrictivos (Cisco ASA, Fortinet, SonicWall) no pueden usar UDP de WireGuard. OpenVPN sobre TCP/443 lo soluciona — el trafico parece HTTPS.
 
-## Arquitectura del panel
-- **Backend**: FastAPI + Python. API REST completa con 7 endpoints: login, listar clientes, anadir/eliminar, descargar .conf, generar QR, estado del servidor.
-- **Auth**: JWT con bcrypt. Tokens de sesion de 8 horas.
-- **Capa WireGuard**: Llamadas Python puras a \`wg\` y \`wg-quick\` via subprocess. Manipulacion directa de \`wg0.conf\` + aplicacion en caliente con \`wg set\`. Sin librerias de terceros para WireGuard.
-- **Frontend**: SPA en React, desplegado como archivos estaticos via Nginx.
-- **Provisioning QR**: libreria \`qrcode\` genera imagenes escaneables para la app movil de WireGuard — onboarding de un usuario movil en menos de 2 minutos.
+## Decisiones de arquitectura
+- **Sin dependencias pesadas** — Sin Docker, React, SQLite ni GUI de OpenVPN. Bash puro + Python + vanilla JS + Nginx. Funciona en un VPS de 512 MB.
+- **Escalado dinamico** — Detecta la RAM disponible y ajusta workers de uvicorn, limites de memoria y TTLs de cache.
+- **Estado en un solo archivo** — Ficheros JSON para usuarios, sitios, invitaciones y configuracion. Sin BD externa. Escrituras atomicas para evitar corrupcion.
+- **Metricas en memoria** — Ring buffers dimensionados segun RAM. Horas de historial de trafico sin I/O a disco. Hilo en segundo plano que consulta wg show cada 30 segundos.
+
+## Seguridad
+- Sin contrasenas por defecto — el instalador fuerza una contrasena fuerte y genera SECRET_KEY aleatoria.
+- bcrypt con 12 rondas de sal.
+- JWT con expiracion corta configurable.
+- Proteccion anti-fuerza bruta — ventana deslizante en memoria + bloqueo por IP.
+- Integracion con Fail2ban para el endpoint de login.
+- Sanitizacion de entradas — rechaza path traversal y metacaracteres de shell.
+- Log de auditoria de cada accion sensible.
+
+## Rendimiento
+40 clientes simultaneos, sin cuellos de botella, menos de 50 ms de latencia — en 800 MB RAM y 1 vCPU.
 
 ## Alternativa terminal
-\`wg-manager.sh\` — para cuando estas en el servidor por SSH y no quieres abrir un navegador. Menu interactivo, misma funcionalidad que el panel.
-
-## Leccion
-Escribir la capa de gestion de WireGuard en Python puro (solo llamadas subprocess al binario wg) me dio un conocimiento profundo de como funcionan los peers de WireGuard internamente.
+\`wg-manager.sh\` — para cuando estas en el servidor por SSH. Menu interactivo, misma funcionalidad que el panel.
         `
       }
     },
@@ -420,8 +444,8 @@ Escribir una herramienta de monitorizacion en Go me obligo a aprender goroutines
       "nav.resume":      "Resume",
       "nav.projects":    "Projects",
       "hero.greeting":   "whoami",
-      "hero.role":       "Systems & DevOps Engineer",
-      "hero.bio":        "I build infrastructure that stays out of the way. Self-hosted platforms, zero-trust VPN networks, automation scripts — if it runs in a terminal, I'm probably already writing it. I kept 40 users connected through a VPN gateway on a 1 EUR server because constraints are more fun than budgets. Based in Toledo, finishing my CS degree, and looking for a team that cares about doing things right.",
+      "hero.role":       "Infrastructure Engineer",
+      "hero.bio":        "Finishing SMR in Toledo. During my practicas I built a WireGuard management panel from scratch — no Docker, no React, just Bash and Python on a 512 MB VPS. 40 simultaneous clients, under 50 ms latency. I also worked with the WAF and backup teams in a 20-person environment. Currently freelancing on infrastructure setups and looking for a role where I can keep building real things.",
       "hero.cta.email":  "Email me",
       "hero.cta.cv":     "Download CV",
       "hero.photo":      "Add your photo here",
@@ -441,8 +465,8 @@ Escribir una herramienta de monitorizacion en Go me obligo a aprender goroutines
       "nav.resume":      "Curriculum",
       "nav.projects":    "Proyectos",
       "hero.greeting":   "whoami",
-      "hero.role":       "Ingeniero de Sistemas y DevOps",
-      "hero.bio":        "Construyo infraestructuras que no se notan. Plataformas auto-alojadas, redes VPN zero-trust, scripts de automatizacion — si se ejecuta en un terminal, probablemente ya lo estoy escribiendo. Mantuve 40 usuarios conectados a traves de una pasarela VPN en un servidor de 1 EUR porque las restricciones son mas divertidas que los presupuestos. Basado en Toledo, terminando mi grado, y buscando un equipo al que le importe hacer las cosas bien.",
+      "hero.role":       "Ingeniero de Infraestructura",
+      "hero.bio":        "Terminando SMR en Toledo. En mis prácticas construí un panel de gestión WireGuard desde cero — sin Docker, sin React, solo Bash y Python en un VPS de 512 MB. 40 clientes simultáneos, menos de 50 ms de latencia. También trabajé con los equipos de WAF y backups en un entorno de 20 personas. Actualmente hago freelance en configuraciones de infraestructura y busco un puesto donde seguir construyendo cosas reales.",
       "hero.cta.email":  "Escribeme",
       "hero.cta.cv":     "Descargar CV",
       "hero.photo":      "Anade tu foto aqui",
