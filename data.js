@@ -46,7 +46,7 @@ const PORTFOLIO = {
           "Security stack: bcrypt (12 rounds), JWT with configurable expiry, sliding-window brute-force lockout per IP, Fail2ban jail on login 401s, shell-injection-safe input sanitisation (path traversal, metacharacters), per-endpoint rate limiting, and a full audit log on every sensitive action.",
           "Feature set: multi-role access control (admin / technician / viewer), QR code provisioning, JWT-signed single-use invite links, site-to-site hub-and-spoke with auto-generated WireGuard configs and PowerShell NAT script for Windows gateways, real-time traffic metrics pulled from WireGuard kernel counters.",
           "Deployed a hybrid WireGuard + OpenVPN over TCP/443 dual-stack hub serving 3+ SMB client networks — OpenVPN fallback bypasses restrictive corporate firewalls that block UDP.",
-          "Wrote an idempotent installer that detects available RAM and auto-scales uvicorn workers, memory limits, and cache TTLs — same codebase behaves correctly on a 512 MB or a 4 GB machine. 40 simultaneous clients, under 50 ms latency.",
+          "Wrote an idempotent installer that detects available RAM and auto-scales uvicorn workers, memory limits, and cache TTLs — same codebase behaves correctly on a 512 MB or a 4 GB machine. tested in a 1 vCore CPU, 1 GB RAM VPS, 40 simultaneous clients, under 50 ms latency.",
           "Automated client onboarding across Linux and Windows with Bash and PowerShell scripts, cutting provisioning time from ~45 minutes to under 10.",
           "Worked alongside the WAF team (Nginx + ModSecurity for WordPress) and the backup team within a multi-team environment — coordinated across 3 parallel workstreams."
         ],
