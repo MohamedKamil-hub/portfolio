@@ -454,7 +454,7 @@ Escribir una herramienta de monitorizacion en Go me obligo a aprender goroutines
       "nav.projects":    "Projects",
       "hero.greeting":   "whoami",
       "hero.role":       "Infrastructure Engineer",
-      "hero.bio":        "Finishing SMR in Toledo. During my practicas I built a WireGuard management panel from scratch — no Docker, no React, just Bash and Python on a 512 MB VPS. 40 simultaneous clients, under 50 ms latency. I also worked with the WAF and backup teams in a 20-person environment. Currently freelancing on infrastructure setups and looking for a role where I can keep building real things.",
+      "hero.bio":        "Finishing SMR in Toledo. During my internship I built a WireGuard management panel from scratch — no Docker, no React, just Bash and Python on a 512 MB VPS. 40 simultaneous clients, under 50 ms latency. I also worked with the WAF and backup teams in a 20-person environment. Currently freelancing on infrastructure setups and looking for a role where I can keep building real things.",
       "hero.cta.email":  "Email me",
       "hero.cta.cv":     "Download CV",
       "hero.photo":      "Add your photo here",
