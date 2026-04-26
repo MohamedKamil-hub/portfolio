@@ -39,23 +39,25 @@ const PORTFOLIO = {
       role:    { en: "VPN & Infrastructure Engineer",     es: "Ingeniero de VPN e Infraestructura" },
       org:     "SECCION9 CONSULTORIA SL",
       period:  { en: "Mar 2026 — Jun 2026",       es: "Mar 2026 — Jun 2026" },
-      tags:    ["WireGuard", "OpenVPN", "Nginx", "Bash", "PowerShell", "Python", "OPNsense", "iptables", "Fail2ban", "Restic"],
+      tags:    ["WireGuard", "OpenVPN", "FastAPI", "Python", "Nginx", "Bash", "PowerShell", "iptables", "Fail2ban", "systemd", "JWT"],
       bullets: {
         en: [
-          "Built and maintained a WireGuard VPN gateway serving 40 simultaneous clients on a 1 EUR/month VPS (800 MB RAM, 1 vCPU) — no bottlenecks, under 50 ms latency.",
-          "Designed a hybrid VPN hub (WireGuard + OpenVPN over TCP/443) providing Zero Trust remote access across 3+ SMB client networks, bypassing restrictive firewalls.",
-          "Developed a lightweight VPN management panel from scratch: pure Bash + Python + vanilla JS + Nginx, no Docker or heavy frameworks — runs on a 512 MB VPS. Features RBAC (admin/tecnico/viewer), JWT auth with bcrypt, brute-force protection, audit logging, client QR provisioning, site-to-site (hub-and-spoke), and real-time traffic metrics.",
-          "Automated client onboarding across Linux and Windows using custom Bash and PowerShell scripts, cutting provisioning time from ~45 minutes to under 10.",
-          "Collaborated with the WAF team (Nginx + ModSecurity for WordPress) and the backup team (Restic-based backup system) across a 20-person, 3-team structure.",
-          "Implemented network segmentation ensuring departmental isolation — finance, operations, and admin traffic fully separated at the tunnel level."
+          "Built a production VPN management panel from scratch — FastAPI backend, vanilla JS frontend, Nginx, no database. State lives in JSON files with atomic writes to prevent corruption. Runs on a 512 MB VPS with a single systemd service and no runtime overhead.",
+          "Security stack: bcrypt (12 rounds), JWT with configurable expiry, sliding-window brute-force lockout per IP, Fail2ban jail on login 401s, shell-injection-safe input sanitisation (path traversal, metacharacters), per-endpoint rate limiting, and a full audit log on every sensitive action.",
+          "Feature set: multi-role access control (admin / technician / viewer), QR code provisioning, JWT-signed single-use invite links, site-to-site hub-and-spoke with auto-generated WireGuard configs and PowerShell NAT script for Windows gateways, real-time traffic metrics pulled from WireGuard kernel counters.",
+          "Deployed a hybrid WireGuard + OpenVPN over TCP/443 dual-stack hub serving 3+ SMB client networks — OpenVPN fallback bypasses restrictive corporate firewalls that block UDP.",
+          "Wrote an idempotent installer that detects available RAM and auto-scales uvicorn workers, memory limits, and cache TTLs — same codebase behaves correctly on a 512 MB or a 4 GB machine. 40 simultaneous clients, under 50 ms latency.",
+          "Automated client onboarding across Linux and Windows with Bash and PowerShell scripts, cutting provisioning time from ~45 minutes to under 10.",
+          "Worked alongside the WAF team (Nginx + ModSecurity for WordPress) and the backup team within a multi-team environment — coordinated across 3 parallel workstreams."
         ],
         es: [
-          "Construí y mantuve una pasarela VPN WireGuard para 40 clientes simultáneos en un VPS de 1 EUR/mes (800 MB RAM, 1 vCPU) — sin cuellos de botella, menos de 50 ms de latencia.",
-          "Diseñé un hub VPN híbrido (WireGuard + OpenVPN sobre TCP/443) proporcionando acceso remoto Zero Trust en más de 3 redes de PYMEs, eludiendo firewalls restrictivos.",
-          "Desarrollé un panel de gestión VPN desde cero: Bash puro + Python + vanilla JS + Nginx, sin Docker ni frameworks pesados — funciona en un VPS de 512 MB. Incluye RBAC, autenticación JWT con bcrypt, protección anti-fuerza bruta, auditoría, provisioning con QR, site-to-site y métricas de tráfico en tiempo real.",
+          "Construí un panel de gestión VPN en producción desde cero — backend FastAPI, frontend vanilla JS, Nginx, sin base de datos. El estado vive en ficheros JSON con escrituras atómicas para evitar corrupción. Funciona en un VPS de 512 MB como un único servicio systemd sin overhead de runtime.",
+          "Stack de seguridad: bcrypt (12 rondas), JWT con expiración configurable, bloqueo por ventana deslizante por IP, jaula Fail2ban en 401s de login, sanitización de entradas segura contra inyección de shell (path traversal, metacaracteres), rate limiting por endpoint y log de auditoría completo en cada acción sensible.",
+          "Funcionalidades: control de acceso por roles (admin / técnico / viewer), provisioning con código QR, invitaciones firmadas con JWT de un solo uso, site-to-site hub-and-spoke con configs WireGuard autogeneradas y script PowerShell de NAT para gateways Windows, métricas de tráfico en tiempo real desde los contadores del kernel de WireGuard.",
+          "Desplegué un hub dual-stack WireGuard + OpenVPN sobre TCP/443 para más de 3 redes de PYMEs — el fallback OpenVPN esquiva firewalls corporativos restrictivos que bloquean UDP.",
+          "Escribí un instalador idempotente que detecta la RAM disponible y escala automáticamente workers de uvicorn, límites de memoria y TTLs de caché — el mismo código funciona correctamente en 512 MB o 4 GB. 40 clientes simultáneos, menos de 50 ms de latencia.",
           "Automaticé el onboarding de clientes en Linux y Windows con scripts Bash y PowerShell, reduciendo el tiempo de provisioning de ~45 minutos a menos de 10.",
-          "Colaboré con el equipo de WAF (Nginx + ModSecurity para WordPress) y el equipo de backups (sistema basado en Restic) en una estructura de 3 equipos y 20 personas.",
-          "Implementé segmentación de red garantizando aislamiento departamental — finanzas, operaciones y administración completamente separados a nivel de túnel."
+          "Trabajé junto al equipo de WAF (Nginx + ModSecurity para WordPress) y el equipo de backups en un entorno multi-equipo — coordinación entre 3 workstreams paralelos."
         ]
       }
     },
@@ -315,70 +317,77 @@ Containerlab es una herramienta infravalorada para prototipar topologias de red 
       name:  "Seccion9 Secure Hub",
       subtitle: { en: "VPN Management Panel with REST API", es: "Panel de Gestion VPN con API REST" },
       short: {
-        en: "Production VPN management solution for SMBs — WireGuard + OpenVPN dual-stack, web panel (FastAPI + vanilla JS), JWT auth with bcrypt, QR code provisioning for mobile clients, and a terminal-based manager script. Full REST API with 7 endpoints. No Docker, no React, no SQLite — pure Bash + Python + Nginx, runs on a 512 MB VPS.",
-        es: "Solucion de gestion VPN en produccion para PYMEs — WireGuard + OpenVPN dual-stack, panel web (FastAPI + vanilla JS), autenticacion JWT con bcrypt, provisioning con QR para clientes moviles y script de gestion en terminal. API REST completa con 7 endpoints. Sin Docker ni frameworks pesados — Bash puro + Python + Nginx en un VPS de 512 MB."
+        en: "VPN management panel built from scratch for real SMB deployments. FastAPI + vanilla JS + Nginx, state in JSON files with atomic writes — no database, no runtime overhead, runs on a 512 MB VPS as a single systemd service. Security: bcrypt, JWT, sliding-window brute-force lockout per IP, Fail2ban, shell-injection-safe input sanitisation, per-endpoint rate limiting, full audit log. Features multi-role access control (admin / technician / viewer), QR provisioning, site-to-site hub-and-spoke with auto-generated WireGuard configs and PowerShell NAT script for Windows gateways, real-time traffic metrics from kernel counters, and an idempotent RAM-aware installer. 40 simultaneous clients, under 50 ms latency.",
+        es: "Panel de gestión VPN construido desde cero para despliegues reales en PYMEs. FastAPI + vanilla JS + Nginx, estado en ficheros JSON con escrituras atómicas — sin base de datos, sin overhead de runtime, funciona en un VPS de 512 MB como un único servicio systemd. Seguridad: bcrypt, JWT, bloqueo por ventana deslizante por IP, Fail2ban, sanitización segura contra inyección de shell, rate limiting por endpoint, log de auditoría completo. Funcionalidades: control de acceso por roles (admin / técnico / viewer), provisioning con QR, site-to-site hub-and-spoke con configs WireGuard autogeneradas y script PowerShell de NAT para Windows, métricas en tiempo real desde contadores del kernel, e instalador idempotente que escala según la RAM. 40 clientes simultáneos, menos de 50 ms de latencia."
       },
-      tags: ["WireGuard", "OpenVPN", "FastAPI", "Python", "Nginx", "Bash", "iptables", "systemd"],
+      tags: ["WireGuard", "OpenVPN", "FastAPI", "Python", "Nginx", "Bash", "PowerShell", "iptables", "systemd", "JWT"],
       repo: "https://github.com/MohamedKamil-hub/Seccion9-Secure-Hub",
       notes: {
         en: `
 ## What it solves
-SMBs with restrictive firewalls (Cisco ASA, Fortinet, SonicWall) cannot use WireGuard's UDP. OpenVPN over TCP/443 bypasses this — it looks like HTTPS traffic.
+SMBs with restrictive firewalls (Cisco ASA, Fortinet, SonicWall) can't use WireGuard's UDP. OpenVPN over TCP/443 bypasses this — from the outside it looks like HTTPS traffic. The panel manages both stacks from one interface.
 
-## Architecture & design choices
-- **No bloated dependencies** — No Docker, no React, no SQLite, no OpenVPN GUI. Pure Bash + Python + vanilla JS + Nginx. Runs on a 512 MB VPS.
-- **Dynamic scaling** — Automatically detects available RAM and adjusts uvicorn workers, memory limits, and cache TTLs. Thoughtful for low-end VPS.
-- **Single-file state** — JSON files for users, sites, invites, and panel settings. No external DB. Atomic writes (*.tmp + rename) prevent corruption.
-- **In-memory metrics & audit** — Ring buffers sized by RAM. On a small VPS you still get hours of traffic history without disk I/O. A background thread polls wg show every 30 seconds to compute deltas.
-- **WireGuard data caching** — wg_cache.py centralises expensive wg show calls and caches them with a RAM-scaled TTL — avoids hammering the kernel.
-- **Idempotent installer** — install.sh can be run multiple times. Preserves existing users, certs, and WireGuard keys. Uses iptables -C checks to avoid duplicate rules.
+## Architecture
+- **Zero-dependency design** — FastAPI + vanilla JS + Nginx. The entire stack is a Python process behind a reverse proxy, managed by systemd. No container runtime, no database engine, nothing to update or restart except the service itself. This makes it deployable on any Linux VPS with 512 MB RAM.
+- **RAM-aware scaling** — install.sh detects available memory and sets uvicorn worker count, memory limits, and cache TTLs accordingly. The same binary behaves correctly on a 512 MB or a 4 GB machine without any manual tuning.
+- **Atomic state** — all data (users, clients, invites, sites, settings) lives in JSON files. Writes go to a .tmp file first, then renamed — kernel-level atomicity, no partial writes on crash.
+- **In-memory ring buffers** — traffic history and audit events are kept in RAM-sized ring buffers. Hours of metrics available without any disk I/O or log rotation to manage. A background thread polls WireGuard's kernel interface every 30 seconds to compute transfer deltas.
+- **Kernel-friendly caching** — wg_cache.py batches all wg show calls and caches results with a RAM-scaled TTL. Prevents hammering the WireGuard kernel module under load.
+- **Idempotent installer** — install.sh can be re-run without destroying existing config. Uses iptables -C before adding any rule, preserves WireGuard keys and user data across reinstalls.
 
 ## Security
-- No default passwords — installer forces a strong admin password and generates a random SECRET_KEY via openssl rand -hex 32.
-- bcrypt password hashing with salt rounds = 12.
-- JWT access tokens with short configurable expiry.
-- Brute-force protection — in-memory sliding window + lockout per IP.
-- Fail2ban integration — jail for the panel's login endpoint (401s from Nginx logs).
-- Input sanitisation — sanitize.py validates client names, subnet CIDRs, interface names, tokens, DNS lists. Rejects path traversal and shell metacharacters.
-- Audit log — every sensitive action logged with username, role, action, target, and client IP.
+- Installer generates a random SECRET_KEY (openssl rand -hex 32) and forces a strong admin password on first run. No defaults.
+- bcrypt with 12 salt rounds for password storage.
+- JWT access tokens with configurable short expiry.
+- Sliding-window brute-force lockout tracked per source IP in memory.
+- Fail2ban jail watches Nginx logs for 401s on the login endpoint — persistent blocking at the firewall level.
+- sanitize.py validates every input: client names, CIDR subnets, interface names, invite tokens, DNS lists. Rejects path traversal sequences and shell metacharacters before they reach any subprocess call.
+- Dedicated rate_limit.py for login, password change, and invite creation endpoints.
+- Every sensitive action — client create/delete, password change, site assignment, role change — is logged with timestamp, actor, role, target, and source IP.
+- Nginx adds HSTS, CSP, and X-Frame-Options headers. Panel forces HTTPS. Installer warns if the WireGuard UDP port is blocked by a cloud provider firewall.
 
-## Functional completeness
-- Client management — add/delete clients, download .conf or QR code, split-tunnel or full-tunnel.
-- Invite system — JWT-signed, single-use links with expiry. Public onboarding page with QR code.
-- Site-to-site (PYMEs) — register remote gateways (Linux or Windows), auto-generate WireGuard configs, PowerShell script for Windows NAT.
-- Multi-user RBAC — admin, tecnico, viewer.
-- Backup/restore — backup.sh packs .env, data/, and wg0.conf. restore.sh unpacks before a fresh install.
+## Features
+- **Client management** — add/delete peers, download .conf or scan QR, toggle between split-tunnel (VPN subnet + assigned site LANs) and full-tunnel (0.0.0.0/0).
+- **Invite system** — JWT-signed single-use links with configurable expiry. Public onboarding page displays QR code for mobile clients. Can auto-create the peer or distribute a pre-existing config.
+- **Site-to-site** — register remote Linux or Windows gateways. Panel generates WireGuard peer configs and automatically adds the site's LAN subnet to AllowedIPs. For Windows: provides a PowerShell script that enables IP forwarding and NAT.
+- **Access control** — three roles: admin (full access), technician (clients and invites, no settings or user management), viewer (read-only).
+- **Traffic metrics** — per-client graphs, active sessions, connection history, all derived from WireGuard's transfer counters and latest-handshake timestamps.
+- **Backup and restore** — backup.sh packs .env, data/, and wg0.conf into a single archive. restore.sh unpacks it before a fresh install. Straightforward migration path between VPS providers.
 
 ## Performance
-40 simultaneous clients, no bottleneck, under 50 ms latency — on 800 MB RAM and 1 vCPU.
-
-## Terminal fallback
-\`wg-manager.sh\` — for when you are on the server via SSH and don't want to open a browser. Interactive menu, same functionality as the panel.
+40 simultaneous clients sustained on 800 MB RAM and 1 vCPU — under 50 ms latency, 99.5% uptime.
         `,
         es: `
 ## Que resuelve
-Las PYMEs con firewalls restrictivos (Cisco ASA, Fortinet, SonicWall) no pueden usar UDP de WireGuard. OpenVPN sobre TCP/443 lo soluciona — el trafico parece HTTPS.
+Las PYMEs con firewalls restrictivos (Cisco ASA, Fortinet, SonicWall) no pueden usar UDP de WireGuard. OpenVPN sobre TCP/443 lo soluciona — desde fuera el trafico parece HTTPS. El panel gestiona ambos stacks desde una sola interfaz.
 
-## Decisiones de arquitectura
-- **Sin dependencias pesadas** — Sin Docker, React, SQLite ni GUI de OpenVPN. Bash puro + Python + vanilla JS + Nginx. Funciona en un VPS de 512 MB.
-- **Escalado dinamico** — Detecta la RAM disponible y ajusta workers de uvicorn, limites de memoria y TTLs de cache.
-- **Estado en un solo archivo** — Ficheros JSON para usuarios, sitios, invitaciones y configuracion. Sin BD externa. Escrituras atomicas para evitar corrupcion.
-- **Metricas en memoria** — Ring buffers dimensionados segun RAM. Horas de historial de trafico sin I/O a disco. Hilo en segundo plano que consulta wg show cada 30 segundos.
+## Arquitectura
+- **Diseno minimalista** — FastAPI + vanilla JS + Nginx. Todo el stack es un proceso Python detras de un proxy inverso, gestionado por systemd. Desplegable en cualquier VPS Linux con 512 MB RAM.
+- **Escalado segun RAM** — install.sh detecta la memoria disponible y configura workers de uvicorn, limites de memoria y TTLs de cache. El mismo binario funciona correctamente en 512 MB o 4 GB sin ajuste manual.
+- **Estado atomico** — todos los datos (usuarios, clientes, invitaciones, sitios, configuracion) viven en ficheros JSON. Las escrituras van primero a un .tmp y se renombran — atomicidad a nivel de kernel, sin escrituras parciales en caso de fallo.
+- **Ring buffers en memoria** — historial de trafico y eventos de auditoria en buffers dimensionados segun RAM. Horas de metricas sin I/O a disco ni rotacion de logs. Hilo en segundo plano que consulta la interfaz WireGuard cada 30 segundos para calcular deltas de transferencia.
+- **Cache de kernel** — wg_cache.py agrupa las llamadas a wg show y cachea los resultados con un TTL escalado a la RAM. Evita saturar el modulo del kernel bajo carga.
+- **Instalador idempotente** — install.sh puede reejecutarse sin destruir la configuracion existente. Usa iptables -C antes de anadir cualquier regla, preserva claves WireGuard y datos de usuarios entre reinstalaciones.
 
 ## Seguridad
-- Sin contrasenas por defecto — el instalador fuerza una contrasena fuerte y genera SECRET_KEY aleatoria.
-- bcrypt con 12 rondas de sal.
+- El instalador genera un SECRET_KEY aleatorio (openssl rand -hex 32) y fuerza una contrasena admin fuerte en el primer arranque. Sin valores por defecto.
+- bcrypt con 12 rondas de sal para almacenamiento de contrasenas.
 - JWT con expiracion corta configurable.
-- Proteccion anti-fuerza bruta — ventana deslizante en memoria + bloqueo por IP.
-- Integracion con Fail2ban para el endpoint de login.
-- Sanitizacion de entradas — rechaza path traversal y metacaracteres de shell.
-- Log de auditoria de cada accion sensible.
+- Bloqueo por ventana deslizante por IP de origen, en memoria.
+- Jaula Fail2ban que monitoriza los logs de Nginx en busca de 401s en el endpoint de login — bloqueo persistente a nivel de firewall.
+- sanitize.py valida cada entrada: nombres de cliente, subredes CIDR, nombres de interfaz, tokens de invitacion, listas DNS. Rechaza secuencias de path traversal y metacaracteres de shell antes de que lleguen a cualquier llamada subprocess.
+- Log de auditoria de cada accion sensible: timestamp, actor, rol, objetivo e IP de origen.
+
+## Funcionalidades
+- **Gestion de clientes** — anadir/eliminar peers, descargar .conf o escanear QR, alternar entre split-tunnel y full-tunnel.
+- **Sistema de invitaciones** — enlaces JWT de un solo uso con expiracion configurable. Pagina publica de onboarding con QR para clientes moviles.
+- **Site-to-site** — registrar gateways remotos Linux o Windows. El panel genera configs de peer y anade automaticamente la subred LAN del sitio a AllowedIPs. Para Windows: script PowerShell que habilita reenvio IP y NAT.
+- **Control de acceso** — tres roles: admin (acceso completo), tecnico (clientes e invitaciones, sin configuracion ni usuarios), viewer (solo lectura).
+- **Metricas de trafico** — graficas por cliente, sesiones activas, historial de conexiones, todo derivado de los contadores de transferencia de WireGuard.
+- **Backup y restauracion** — backup.sh empaqueta .env, data/ y wg0.conf en un archivo. restore.sh lo desempaqueta antes de una instalacion limpia.
 
 ## Rendimiento
-40 clientes simultaneos, sin cuellos de botella, menos de 50 ms de latencia — en 800 MB RAM y 1 vCPU.
-
-## Alternativa terminal
-\`wg-manager.sh\` — para cuando estas en el servidor por SSH. Menu interactivo, misma funcionalidad que el panel.
+40 clientes simultaneos en 800 MB RAM y 1 vCPU — menos de 50 ms de latencia, 99.5% de uptime.
         `
       }
     },
