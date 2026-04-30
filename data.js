@@ -147,6 +147,15 @@ const PORTFOLIO = {
       skills: ["DHCP", "DNS", "IPv4 Subnetting", "Cisco IOS"],
     },
     {
+      name:   "Python Essentials 1",
+      issuer: "Cisco",
+      date:   { en: "Apr 2026", es: "Abr 2026" },
+      icon:   "fa-brands fa-python",
+      color:  "#00BCF2",
+      url:    "https://www.credly.com/earner/earned/badge/949a7e48-84f4-472f-84af-b6eda3851b05",
+      skills: ["Python", "Computer Programming", "Algorithmic Thinking", "Basic Python Programming"],
+    },
+    {
       name:   "EF SET English Certificate B2",
       issuer: "EF SET",
       date:   { en: "Jul 2025", es: "Jul 2025" },
