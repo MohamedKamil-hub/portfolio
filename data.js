@@ -42,25 +42,19 @@ const PORTFOLIO = {
       tags:    ["WireGuard", "OpenVPN", "FastAPI", "Python", "Nginx", "Bash", "PowerShell", "iptables", "Fail2ban", "systemd", "JWT", "Red Team"],
       bullets: {
         en: [
-          "Built a production VPN management panel from scratch — FastAPI backend, vanilla JS frontend, Nginx, no database. State lives in JSON files with atomic writes to prevent corruption. Runs on a 512 MB VPS with a single systemd service and no runtime overhead.",
-          "Security stack: bcrypt (12 rounds), JWT with configurable expiry, sliding-window brute-force lockout per IP, Fail2ban jail on login 401s, shell-injection-safe input sanitisation (path traversal, metacharacters), per-endpoint rate limiting, and a full audit log on every sensitive action.",
-          "Feature set: multi-role access control (admin / technician / viewer), QR code provisioning, JWT-signed single-use invite links, site-to-site hub-and-spoke with auto-generated WireGuard configs and PowerShell NAT script for Windows gateways, real-time traffic metrics pulled from WireGuard kernel counters.",
-          "Deployed a hybrid WireGuard + OpenVPN over TCP/443 dual-stack hub serving 3+ SMB client networks — OpenVPN fallback bypasses restrictive corporate firewalls that block UDP.",
-          "Wrote an idempotent installer that detects available RAM and auto-scales uvicorn workers, memory limits, and cache TTLs — same codebase behaves correctly on a 512 MB or a 4 GB machine. tested in a 1 vCore CPU, 1 GB RAM VPS, 40 simultaneous clients, under 50 ms latency.",
-          "Automated client onboarding across Linux and Windows with Bash and PowerShell scripts, cutting provisioning time from ~45 minutes to under 10.",
-          "Worked alongside the WAF team (Nginx + ModSecurity for WordPress) and the backup team within a multi-team environment — coordinated across 3 parallel workstreams.",
-          "Delivered infrastructure work for real SMB clients — direct communication, on-site deployments, and post-deployment support across multiple companies.",
+          "Built a production VPN management panel from scratch — FastAPI + vanilla JS + Nginx, no database (atomic JSON state), running as a single systemd service on a 512 MB VPS. Hardened with bcrypt, JWT, per-IP brute-force lockout, Fail2ban, shell-injection-safe input sanitisation, and full audit logging.",
+          "Deployed a hybrid WireGuard + OpenVPN-over-TCP/443 dual-stack hub for 3+ SMB networks — OpenVPN fallback bypasses restrictive corporate firewalls that block UDP.",
+          "Wrote a RAM-aware idempotent installer that auto-scales uvicorn workers, memory limits, and cache TTLs — same codebase runs on 512 MB or 4 GB. Sustained 40 simultaneous clients under 50 ms latency on 1 vCPU / 1 GB.",
+          "Automated client onboarding across Linux and Windows with Bash and PowerShell scripts — cut provisioning time from ~45 minutes to under 10.",
+          "Delivered infrastructure work for real SMB clients in a multi-team environment — direct client communication and on-site deployments, coordinating across 3 parallel workstreams with the WAF and backup teams.",
           "Authored an authorized internal red team exercise: full kill chain from public IP to root across three hosts via SSH exposure, plaintext DB credentials, and lateral movement. Delivered remediation report with 6 ranked findings."
         ],
         es: [
-          "Construí un panel de gestión VPN en producción desde cero — backend FastAPI, frontend vanilla JS, Nginx, sin base de datos. El estado vive en ficheros JSON con escrituras atómicas para evitar corrupción. Funciona en un VPS de 512 MB como un único servicio systemd sin overhead de runtime.",
-          "Stack de seguridad: bcrypt (12 rondas), JWT con expiración configurable, bloqueo por ventana deslizante por IP, jaula Fail2ban en 401s de login, sanitización de entradas segura contra inyección de shell (path traversal, metacaracteres), rate limiting por endpoint y log de auditoría completo en cada acción sensible.",
-          "Funcionalidades: control de acceso por roles (admin / técnico / viewer), provisioning con código QR, invitaciones firmadas con JWT de un solo uso, site-to-site hub-and-spoke con configs WireGuard autogeneradas y script PowerShell de NAT para gateways Windows, métricas de tráfico en tiempo real desde los contadores del kernel de WireGuard.",
-          "Desplegué un hub dual-stack WireGuard + OpenVPN sobre TCP/443 para más de 3 redes de PYMEs — el fallback OpenVPN esquiva firewalls corporativos restrictivos que bloquean UDP.",
-          "Escribí un instalador idempotente que detecta la RAM disponible y escala automáticamente workers de uvicorn, límites de memoria y TTLs de caché — el mismo código funciona correctamente en 512 MB o 4 GB. 40 clientes simultáneos, menos de 50 ms de latencia.",
-          "Automaticé el onboarding de clientes en Linux y Windows con scripts Bash y PowerShell, reduciendo el tiempo de provisioning de ~45 minutos a menos de 10.",
-          "Trabajé junto al equipo de WAF (Nginx + ModSecurity para WordPress) y el equipo de backups en un entorno multi-equipo — coordinación entre 3 workstreams paralelos.",
-          "Trabajé con clientes PYME reales — comunicación directa, despliegues on-site y soporte post-despliegue en varias empresas.",
+          "Construí un panel de gestión VPN en producción desde cero — FastAPI + vanilla JS + Nginx, sin base de datos (estado JSON atómico), como un único servicio systemd en un VPS de 512 MB. Hardening con bcrypt, JWT, bloqueo por IP, Fail2ban, sanitización segura contra inyección de shell y log de auditoría completo.",
+          "Desplegué un hub dual-stack WireGuard + OpenVPN sobre TCP/443 para más de 3 redes PYME — el fallback OpenVPN esquiva firewalls corporativos restrictivos que bloquean UDP.",
+          "Escribí un instalador idempotente que detecta la RAM y escala automáticamente workers de uvicorn, límites de memoria y TTLs de caché — mismo código en 512 MB o 4 GB. 40 clientes simultáneos bajo 50 ms de latencia en 1 vCPU / 1 GB.",
+          "Automaticé el onboarding de clientes en Linux y Windows con scripts Bash y PowerShell — reduje el tiempo de provisioning de ~45 minutos a menos de 10.",
+          "Trabajé con clientes PYME reales en un entorno multi-equipo — comunicación directa, despliegues on-site y coordinación entre 3 workstreams paralelos con los equipos de WAF y backups.",
           "Autoría de un ejercicio interno autorizado de red team: kill chain completa desde IP pública hasta root a través de tres hosts — SSH expuesto, credenciales de BD en texto plano y movimiento lateral. Informe de remediación con 6 hallazgos priorizados."
         ]
       }
