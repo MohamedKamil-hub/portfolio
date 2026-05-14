@@ -49,8 +49,8 @@ const PORTFOLIO = {
           "Wrote an idempotent installer that detects available RAM and auto-scales uvicorn workers, memory limits, and cache TTLs — same codebase behaves correctly on a 512 MB or a 4 GB machine. tested in a 1 vCore CPU, 1 GB RAM VPS, 40 simultaneous clients, under 50 ms latency.",
           "Automated client onboarding across Linux and Windows with Bash and PowerShell scripts, cutting provisioning time from ~45 minutes to under 10.",
           "Worked alongside the WAF team (Nginx + ModSecurity for WordPress) and the backup team within a multi-team environment — coordinated across 3 parallel workstreams.",
-          "Authored an authorized internal red team exercise simulating a real-world attacker reaching root from a public IP. Executed the full kill chain across three hosts — external SSH entry, plaintext DB credential pivot, lateral movement via reused credentials, and base64-stored secret leading to local privilege escalation — and wrote the remediation report covering 6 ranked findings, from exposed SSH and weak credential storage to outdated internal services.",
-          "Daily power user of the internal task and time-tracking platform during real client work — kanban tasks, clock-in/out with auto-close, three-tramo progress reports (10:00 / 12:00 / 14:00), team presence status, and internal chat. Provided structured feedback on edge cases (forgotten clock-outs, PIN reset flow, mobile layout glitches) that fed directly into product fixes."
+          "Delivered infrastructure work for real SMB clients — direct communication, on-site deployments, and post-deployment support across multiple companies.",
+          "Authored an authorized internal red team exercise: full kill chain from public IP to root across three hosts via SSH exposure, plaintext DB credentials, and lateral movement. Delivered remediation report with 6 ranked findings."
         ],
         es: [
           "Construí un panel de gestión VPN en producción desde cero — backend FastAPI, frontend vanilla JS, Nginx, sin base de datos. El estado vive en ficheros JSON con escrituras atómicas para evitar corrupción. Funciona en un VPS de 512 MB como un único servicio systemd sin overhead de runtime.",
@@ -60,8 +60,8 @@ const PORTFOLIO = {
           "Escribí un instalador idempotente que detecta la RAM disponible y escala automáticamente workers de uvicorn, límites de memoria y TTLs de caché — el mismo código funciona correctamente en 512 MB o 4 GB. 40 clientes simultáneos, menos de 50 ms de latencia.",
           "Automaticé el onboarding de clientes en Linux y Windows con scripts Bash y PowerShell, reduciendo el tiempo de provisioning de ~45 minutos a menos de 10.",
           "Trabajé junto al equipo de WAF (Nginx + ModSecurity para WordPress) y el equipo de backups en un entorno multi-equipo — coordinación entre 3 workstreams paralelos.",
-          "Autoría de un ejercicio interno autorizado de red team simulando cómo un atacante real alcanza root desde una IP pública. Ejecuté la kill chain completa a través de tres hosts — entrada por SSH externo, pivote por credenciales en texto plano en base de datos, movimiento lateral con credenciales reutilizadas y secreto en base64 que llevó a escalada local — y redacté el informe de remediación con 6 hallazgos priorizados, desde SSH expuesto y almacenamiento débil de credenciales hasta servicios internos desactualizados.",
-          "Usuario intensivo de la plataforma interna de tareas y fichaje durante trabajo real con clientes — tablero kanban, fichaje con cierre automático, reportes en tres tramos (10:00 / 12:00 / 14:00), estado de presencia del equipo y chat interno. Feedback estructurado sobre casos límite (fichajes sin cerrar, flujo de reseteo de PIN, ajustes de layout en móvil) que se incorporó directamente al producto."
+          "Trabajé con clientes PYME reales — comunicación directa, despliegues on-site y soporte post-despliegue en varias empresas.",
+          "Autoría de un ejercicio interno autorizado de red team: kill chain completa desde IP pública hasta root a través de tres hosts — SSH expuesto, credenciales de BD en texto plano y movimiento lateral. Informe de remediación con 6 hallazgos priorizados."
         ]
       }
     },
