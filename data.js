@@ -36,10 +36,36 @@ const PORTFOLIO = {
   // ── Experience timeline ────────────────────────────────────
   experience: [
     {
-      role:    { en: "VPN & Infrastructure Engineer",     es: "Ingeniero de VPN e Infraestructura" },
-      org:     "SECCION9 CONSULTORIA SL",
-      period:  { en: "Mar 2026 — Jun 2026",       es: "Mar 2026 — Jun 2026" },
-      tags:    ["WireGuard", "OpenVPN", "FastAPI", "Python", "Nginx", "Bash", "PowerShell", "iptables", "Fail2ban", "systemd", "JWT", "Red Team"],
+      role:     { en: "IT Support Technician",           es: "Técnico de Soporte IT" },
+      org:      "Randstad Digital España",
+      period:   { en: "May 2026 — Present",              es: "May 2026 — Presente" },
+      modality: { en: "Hybrid · Madrid",                 es: "Híbrido · Madrid" },
+      tags:     ["Linux", "Ubuntu", "Debian", "Networking", "CUPS", "ITSM", "Hardware", "Bash"],
+      bullets: {
+        en: [
+          "On-site IT support in a logistics environment: imaging and configuring servers (Debian), workstations, RF scanners, and label printers (Ubuntu) as part of full maquetación cycles.",
+          "User creation and enrollment across systems; OS installation and configuration for Linux (Ubuntu/Debian) endpoints deployed at warehouse scale.",
+          "Network configuration — static IPs, WiFi setup, and troubleshooting — plus driver installation for WiFi adapters and printers in high-turnover hardware environments.",
+          "Printer configuration and troubleshooting (CUPS, connectivity pairing, queue management) for logistics operations where downtime directly impacts fulfilment.",
+          "ITSM ticket triage: classifying incidents as remote-resolvable vs. on-site dispatch, reducing unnecessary engineer travel.",
+          "Hardware incident resolution following standardised protocols: cabling, switch work, peripheral repair.",
+        ],
+        es: [
+          "Soporte técnico on-site en entorno logístico: maquetación y configuración de servidores (Debian), PCs, pistolas RF e impresoras (Ubuntu) en ciclos completos de despliegue.",
+          "Creación y enrolado de usuarios; instalación y configuración de sistemas operativos Linux (Ubuntu/Debian) en endpoints a escala de almacén.",
+          "Configuración de red — IPs fijas, WiFi y troubleshooting — e instalación de drivers de WiFi e impresoras en entornos con alta rotación de hardware.",
+          "Configuración y resolución de incidencias de impresoras (CUPS, emparejamiento, gestión de cola) en operaciones logísticas donde el tiempo de parada impacta directamente en el fulfillment.",
+          "Triaje de tickets en herramientas ITSM: clasificación de incidencias como resolución remota vs. presencial, reduciendo desplazamientos innecesarios.",
+          "Resolución de incidencias de hardware siguiendo protocolos estandarizados: cableado, switches y reparación de periféricos.",
+        ]
+      }
+    },
+    {
+      role:     { en: "VPN & Infrastructure Engineer",   es: "Ingeniero de VPN e Infraestructura" },
+      org:      "SECCION9 CONSULTORIA SL",
+      period:   { en: "Mar 2026 — Jun 2026",             es: "Mar 2026 — Jun 2026" },
+      modality: { en: "Remote",                          es: "Remoto" },
+      tags:     ["WireGuard", "OpenVPN", "FastAPI", "Python", "Nginx", "Bash", "PowerShell", "iptables", "Fail2ban", "systemd", "JWT", "Red Team"],
       bullets: {
         en: [
           "Built a production VPN management panel from scratch — FastAPI + vanilla JS + Nginx, no database (atomic JSON state), running as a single systemd service on a 512 MB VPS. Hardened with bcrypt, JWT, per-IP brute-force lockout, Fail2ban, shell-injection-safe input sanitisation, and full audit logging.",
@@ -47,7 +73,7 @@ const PORTFOLIO = {
           "Wrote a RAM-aware idempotent installer that auto-scales uvicorn workers, memory limits, and cache TTLs — same codebase runs on 512 MB or 4 GB. Sustained 40 simultaneous clients under 50 ms latency on 1 vCPU / 1 GB.",
           "Automated client onboarding across Linux and Windows with Bash and PowerShell scripts — cut provisioning time from ~45 minutes to under 10.",
           "Delivered infrastructure work for real SMB clients in a multi-team environment — direct client communication and on-site deployments, coordinating across 3 parallel workstreams with the WAF and backup teams.",
-          "Authored an authorized internal red team exercise: full kill chain from public IP to root across three hosts via SSH exposure, plaintext DB credentials, and lateral movement. Delivered remediation report with 6 ranked findings."
+          "Authored an authorized internal red team exercise: full kill chain from public IP to root across three hosts via SSH exposure, plaintext DB credentials, and lateral movement. Delivered remediation report with 6 ranked findings.",
         ],
         es: [
           "Construí un panel de gestión VPN en producción desde cero — FastAPI + vanilla JS + Nginx, sin base de datos (estado JSON atómico), como un único servicio systemd en un VPS de 512 MB. Hardening con bcrypt, JWT, bloqueo por IP, Fail2ban, sanitización segura contra inyección de shell y log de auditoría completo.",
@@ -55,15 +81,16 @@ const PORTFOLIO = {
           "Escribí un instalador idempotente que detecta la RAM y escala automáticamente workers de uvicorn, límites de memoria y TTLs de caché — mismo código en 512 MB o 4 GB. 40 clientes simultáneos bajo 50 ms de latencia en 1 vCPU / 1 GB.",
           "Automaticé el onboarding de clientes en Linux y Windows con scripts Bash y PowerShell — reduje el tiempo de provisioning de ~45 minutos a menos de 10.",
           "Trabajé con clientes PYME reales en un entorno multi-equipo — comunicación directa, despliegues on-site y coordinación entre 3 workstreams paralelos con los equipos de WAF y backups.",
-          "Autoría de un ejercicio interno autorizado de red team: kill chain completa desde IP pública hasta root a través de tres hosts — SSH expuesto, credenciales de BD en texto plano y movimiento lateral. Informe de remediación con 6 hallazgos priorizados."
+          "Autoría de un ejercicio interno autorizado de red team: kill chain completa desde IP pública hasta root a través de tres hosts — SSH expuesto, credenciales de BD en texto plano y movimiento lateral. Informe de remediación con 6 hallazgos priorizados.",
         ]
       }
     },
     {
-      role:    { en: "IT Intern",                es: "Becario IT" },
-      org:     "Colegio San Bernardo (Fundación)",
-      period:  { en: "Mar 2025 — Apr 2025",      es: "Mar 2025 — Abr 2025" },
-      tags:    ["Networking", "Hardware", "LAN", "Maintenance"],
+      role:     { en: "IT Intern",                       es: "Becario IT" },
+      org:      "Colegio San Bernardo (Fundación)",
+      period:   { en: "Mar 2025 — Apr 2025",             es: "Mar 2025 — Abr 2025" },
+      modality: { en: "On-site · Madrid",                es: "Presencial · Madrid" },
+      tags:     ["Networking", "Hardware", "LAN", "Maintenance"],
       bullets: {
         en: [
           "Installed and configured network equipment across a 20+ device school LAN environment.",
@@ -414,8 +441,7 @@ Las PYMEs con firewalls restrictivos (Cisco ASA, Fortinet, SonicWall) no pueden 
 I needed a PaaS that runs on a Raspberry Pi or a 512 MB VPS. Coolify needs 2 GB+ just for the dashboard. Heroku costs money. I built Nebula.
 
 ## Nebula Pulse — the Go rewrite
-Originally monitored with Python + standard tools. RAM usage: ~500 MB. Rewrote the monitor in Go as a single static binary. New RAM usage: ~10 MB. 95% reduction.
-Why Go? Single binary, no runtime, instant startup, zero external dependencies. Perfect for resource-constrained hardware.
+Originally monitored with Python + standard tools. RAM usage: ~500 MB. Rewrote the monitor in Go as a single static binary. New RAM usage: ~10 MB. 95% reduction. Why Go? Single binary, no runtime, instant startup, zero external dependencies. Perfect for resource-constrained hardware.
 
 ## What it does
 - Deploys Docker apps behind Nginx reverse proxy with automatic SSL.
@@ -434,8 +460,7 @@ Writing a monitoring tool in Go for the first time forced me to learn goroutines
 Necesitaba una PaaS que funcionase en una Raspberry Pi o un VPS de 512 MB. Coolify necesita 2 GB+ solo para el panel. Heroku cuesta dinero. Construi Nebula.
 
 ## Nebula Pulse — la reescritura en Go
-Originalmente monitorizaba con Python + herramientas estandar. Consumo de RAM: ~500 MB. Reescribi el monitor en Go como un unico binario estatico. Nuevo consumo: ~10 MB. Reduccion del 95%.
-Por que Go? Binario unico, sin runtime, arranque instantaneo, sin dependencias externas.
+Originalmente monitorizaba con Python + herramientas estandar. Consumo de RAM: ~500 MB. Reescribi el monitor en Go como un unico binario estatico. Nuevo consumo: ~10 MB. Reduccion del 95%. Por que Go? Binario unico, sin runtime, arranque instantaneo, sin dependencias externas.
 
 ## Que hace
 - Despliega apps Docker detras de un proxy inverso Nginx con SSL automatico.
