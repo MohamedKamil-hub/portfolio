@@ -12,6 +12,7 @@ const PORTFOLIO = {
     github:   "https://github.com/MohamedKamil-hub",
     twitter:  "https://x.com/kamilka_hub",
     credly:   "https://www.credly.com/users/mohamed-kamil-el-kouarti-mechhidan",
+    devto:    "https://dev.to/mohamedkamil",
   },
 
   // ── CV download paths (language-aware) ─────────────────────
@@ -26,70 +27,72 @@ const PORTFOLIO = {
   // ── Terminal status card (hero) ────────────────────────────
   statusLines: [
     { label: "user",     value: "kamil@toledo" },
-    { label: "role",     value: "Infrastructure Engineer", highlight: false },
-    { label: "status",   value: "freelance · open to roles", highlight: true },
+    { label: "role",     value: "Systems Technician - SMR student", highlight: false },
+    { label: "status",   value: "open to roles", highlight: true },
     { label: "location", value: "Toledo, Castilla-La Mancha, Spain" },
-    { label: "stack",    value: "WireGuard · Bash · Python · Nginx" },
+    { label: "stack",    value: "Linux - WireGuard - Bash - Python" },
     { label: "lang",     value: "ES (native)  EN (professional)" },
   ],
 
   // ── Experience timeline ────────────────────────────────────
   experience: [
     {
-      role:     { en: "IT Support Technician",           es: "Técnico de Soporte IT" },
-      org:      "Randstad Digital España",
-      period:   { en: "May 2026 — Present",              es: "May 2026 — Presente" },
-      modality: { en: "Hybrid · Madrid",                 es: "Híbrido · Madrid" },
-      tags:     ["Linux", "Ubuntu", "Debian", "Networking", "CUPS", "ITSM", "Hardware", "Bash"],
+      role:     { en: "IT Support Technician",           es: "Tecnico de Soporte IT" },
+      org:      "Randstad Digital Espana - on-site at CEVA Logistics (Amazon)",
+      period:   { en: "May 2026 - Present",              es: "May 2026 - Presente" },
+      modality: { en: "On-site - Ontigola",              es: "Presencial - Ontigola" },
+      tags:     ["Linux", "Ubuntu", "Debian", "Cisco", "Networking", "CUPS", "ITSM", "Hardware", "Bash"],
       bullets: {
         en: [
-          "On-site IT support in a logistics environment: imaging and configuring servers (Debian), workstations, RF scanners, and label printers (Ubuntu) as part of full maquetación cycles.",
-          "User creation and enrollment across systems; OS installation and configuration for Linux (Ubuntu/Debian) endpoints deployed at warehouse scale.",
-          "Network configuration — static IPs, WiFi setup, and troubleshooting — plus driver installation for WiFi adapters and printers in high-turnover hardware environments.",
-          "Printer configuration and troubleshooting (CUPS, connectivity pairing, queue management) for logistics operations where downtime directly impacts fulfilment.",
-          "ITSM ticket triage: classifying incidents as remote-resolvable vs. on-site dispatch, reducing unnecessary engineer travel.",
-          "Hardware incident resolution following standardised protocols: cabling, switch work, peripheral repair.",
+          "On-site IT support for the Amazon-CEVA Logistics deployment in Ontigola - full workstation refresh cycles, replacing aged equipment with updated hardware across production lines.",
+          "Deployed and configured 20-30 workstations per shift: thin clients, monitors, RF scanners, label printers, and peripherals - verified network connectivity and production-line integration for each station.",
+          "Team reduced per-station configuration time from 40 minutes to 10 minutes through process improvements.",
+          "Imaging and configuring Debian servers and Ubuntu endpoints; user enrollment, static IP assignment, WiFi setup, and driver installation at warehouse scale.",
+          "Printer configuration and troubleshooting (CUPS, queue management) for 24/7 logistics operations where downtime directly impacts fulfilment.",
+          "ITSM ticket triage under SLA: classified incidents as remote-resolvable vs on-site dispatch, reducing unnecessary engineer travel.",
+          "Worked with Cisco network equipment in a live production environment.",
         ],
         es: [
-          "Soporte técnico on-site en entorno logístico: maquetación y configuración de servidores (Debian), PCs, pistolas RF e impresoras (Ubuntu) en ciclos completos de despliegue.",
-          "Creación y enrolado de usuarios; instalación y configuración de sistemas operativos Linux (Ubuntu/Debian) en endpoints a escala de almacén.",
-          "Configuración de red — IPs fijas, WiFi y troubleshooting — e instalación de drivers de WiFi e impresoras en entornos con alta rotación de hardware.",
-          "Configuración y resolución de incidencias de impresoras (CUPS, emparejamiento, gestión de cola) en operaciones logísticas donde el tiempo de parada impacta directamente en el fulfillment.",
-          "Triaje de tickets en herramientas ITSM: clasificación de incidencias como resolución remota vs. presencial, reduciendo desplazamientos innecesarios.",
-          "Resolución de incidencias de hardware siguiendo protocolos estandarizados: cableado, switches y reparación de periféricos.",
+          "Soporte IT on-site en el despliegue Amazon-CEVA Logistics en Ontigola - ciclos completos de renovacion de workstations, sustituyendo equipos antiguos por hardware actualizado en lineas de produccion.",
+          "Despliegue y configuracion de 20-30 workstations por turno: thin clients, monitores, pistolas RF, impresoras de etiquetas y perifericos - verificacion de conectividad e integracion con linea de produccion.",
+          "El equipo redujo el tiempo de configuracion por estacion de 40 minutos a 10 minutos mediante mejoras de proceso.",
+          "Maquetacion y configuracion de servidores Debian y endpoints Ubuntu; enrolado de usuarios, asignacion de IPs fijas, configuracion WiFi e instalacion de drivers a escala de almacen.",
+          "Configuracion y resolucion de incidencias de impresoras (CUPS, gestion de cola) en operaciones logisticas 24/7 donde el downtime impacta directamente al fulfillment.",
+          "Triaje de tickets ITSM bajo SLA: clasificacion remota vs presencial, reduciendo desplazamientos innecesarios.",
+          "Trabajo con equipamiento de red Cisco en entorno de produccion real.",
         ]
       }
     },
     {
-      role:     { en: "VPN & Infrastructure Engineer",   es: "Ingeniero de VPN e Infraestructura" },
+      role:     { en: "Systems & Network Technician (Internship)",   es: "Tecnico de Sistemas y Redes (Practicas)" },
       org:      "SECCION9 CONSULTORIA SL",
-      period:   { en: "Mar 2026 — Jun 2026",             es: "Mar 2026 — Jun 2026" },
-      modality: { en: "Remote",                          es: "Remoto" },
+      period:   { en: "Mar 2026 - Jun 2026",             es: "Mar 2026 - Jun 2026" },
+      modality: { en: "Remote - Unpaid internship",      es: "Remoto - Practicas no remuneradas" },
       tags:     ["WireGuard", "OpenVPN", "FastAPI", "Python", "Nginx", "Bash", "PowerShell", "iptables", "Fail2ban", "systemd", "JWT", "Red Team"],
       bullets: {
         en: [
-          "Built a production VPN management panel from scratch — FastAPI + vanilla JS + Nginx, no database (atomic JSON state), running as a single systemd service on a 512 MB VPS. Hardened with bcrypt, JWT, per-IP brute-force lockout, Fail2ban, shell-injection-safe input sanitisation, and full audit logging.",
-          "Deployed a hybrid WireGuard + OpenVPN-over-TCP/443 dual-stack hub for 3+ SMB networks — OpenVPN fallback bypasses restrictive corporate firewalls that block UDP.",
-          "Wrote a RAM-aware idempotent installer that auto-scales uvicorn workers, memory limits, and cache TTLs — same codebase runs on 512 MB or 4 GB. Sustained 40 simultaneous clients under 50 ms latency on 1 vCPU / 1 GB.",
-          "Automated client onboarding across Linux and Windows with Bash and PowerShell scripts — cut provisioning time from ~45 minutes to under 10.",
-          "Delivered infrastructure work for real SMB clients in a multi-team environment — direct client communication and on-site deployments, coordinating across 3 parallel workstreams with the WAF and backup teams.",
+          "Built a production VPN management panel from scratch - FastAPI + vanilla JS + Nginx, no database (atomic JSON state), running as a single systemd service on a 512 MB VPS. Hardened with bcrypt, JWT, per-IP brute-force lockout, Fail2ban, shell-injection-safe input sanitisation, and full audit logging.",
+          "Deployed a hybrid WireGuard + OpenVPN-over-TCP/443 dual-stack hub for 3+ SMB networks - OpenVPN fallback bypasses restrictive corporate firewalls that block UDP.",
+          "Wrote a RAM-aware idempotent installer that auto-scales uvicorn workers, memory limits, and cache TTLs - same codebase runs on 512 MB or 4 GB. Sustained 40 simultaneous clients under 50 ms latency on 1 vCPU / 1 GB.",
+          "Automated client onboarding across Linux and Windows with Bash and PowerShell scripts - cut provisioning time from ~45 minutes to under 10.",
+          "Delivered infrastructure work for real SMB clients in a multi-team environment - direct client communication and on-site deployments, coordinating across 3 parallel workstreams with the WAF and backup teams.",
           "Authored an authorized internal red team exercise: full kill chain from public IP to root across three hosts via SSH exposure, plaintext DB credentials, and lateral movement. Delivered remediation report with 6 ranked findings.",
         ],
         es: [
-          "Construí un panel de gestión VPN en producción desde cero — FastAPI + vanilla JS + Nginx, sin base de datos (estado JSON atómico), como un único servicio systemd en un VPS de 512 MB. Hardening con bcrypt, JWT, bloqueo por IP, Fail2ban, sanitización segura contra inyección de shell y log de auditoría completo.",
-          "Desplegué un hub dual-stack WireGuard + OpenVPN sobre TCP/443 para más de 3 redes PYME — el fallback OpenVPN esquiva firewalls corporativos restrictivos que bloquean UDP.",
-          "Escribí un instalador idempotente que detecta la RAM y escala automáticamente workers de uvicorn, límites de memoria y TTLs de caché — mismo código en 512 MB o 4 GB. 40 clientes simultáneos bajo 50 ms de latencia en 1 vCPU / 1 GB.",
-          "Automaticé el onboarding de clientes en Linux y Windows con scripts Bash y PowerShell — reduje el tiempo de provisioning de ~45 minutos a menos de 10.",
-          "Trabajé con clientes PYME reales en un entorno multi-equipo — comunicación directa, despliegues on-site y coordinación entre 3 workstreams paralelos con los equipos de WAF y backups.",
-          "Autoría de un ejercicio interno autorizado de red team: kill chain completa desde IP pública hasta root a través de tres hosts — SSH expuesto, credenciales de BD en texto plano y movimiento lateral. Informe de remediación con 6 hallazgos priorizados.",
+          "Construi un panel de gestion VPN en produccion desde cero - FastAPI + vanilla JS + Nginx, sin base de datos (estado JSON atomico), como un unico servicio systemd en un VPS de 512 MB. Hardening con bcrypt, JWT, bloqueo por IP, Fail2ban, sanitizacion segura contra inyeccion de shell y log de auditoria completo.",
+          "Despliegue de un hub dual-stack WireGuard + OpenVPN sobre TCP/443 para mas de 3 redes PYME - el fallback OpenVPN esquiva firewalls corporativos restrictivos que bloquean UDP.",
+          "Instalador idempotente que detecta la RAM y escala automaticamente workers de uvicorn, limites de memoria y TTLs de cache - mismo codigo en 512 MB o 4 GB. 40 clientes simultaneos bajo 50 ms de latencia en 1 vCPU / 1 GB.",
+          "Automatice el onboarding de clientes en Linux y Windows con scripts Bash y PowerShell - reduje el tiempo de provisioning de ~45 minutos a menos de 10.",
+          "Trabajo con clientes PYME reales en un entorno multi-equipo - comunicacion directa, despliegues on-site y coordinacion entre 3 workstreams paralelos con los equipos de WAF y backups.",
+          "Autoria de un ejercicio interno autorizado de red team: kill chain completa desde IP publica hasta root a traves de tres hosts - SSH expuesto, credenciales de BD en texto plano y movimiento lateral. Informe de remediacion con 6 hallazgos priorizados.",
         ]
       }
     },
     {
       role:     { en: "IT Intern",                       es: "Becario IT" },
-      org:      "Colegio San Bernardo (Fundación)",
-      period:   { en: "Mar 2025 — Apr 2025",             es: "Mar 2025 — Abr 2025" },
-      modality: { en: "On-site · Madrid",                es: "Presencial · Madrid" },
+      org:      "Colegio San Bernardo (Fundacion)",
+      period:   { en: "Mar 2025 - Apr 2025",             es: "Mar 2025 - Abr 2025" },
+      modality: { en: "On-site - Madrid",                es: "Presencial - Madrid" },
       tags:     ["Networking", "Hardware", "LAN", "Maintenance"],
       bullets: {
         en: [
@@ -98,9 +101,9 @@ const PORTFOLIO = {
           "Diagnosed and repaired hardware peripherals following standardized technical protocols.",
         ],
         es: [
-          "Instalé y configuré equipos de red en un entorno escolar con más de 20 dispositivos en LAN.",
-          "Realicé mantenimiento preventivo y correctivo de redes locales, resolviendo problemas de conectividad para más de 100 usuarios diarios.",
-          "Diagnostiqué y reparé periféricos de hardware siguiendo protocolos técnicos estandarizados.",
+          "Instale y configure equipos de red en un entorno escolar con mas de 20 dispositivos en LAN.",
+          "Realice mantenimiento preventivo y correctivo de redes locales, resolviendo problemas de conectividad para mas de 100 usuarios diarios.",
+          "Diagnostique y repare perifericos de hardware siguiendo protocolos tecnicos estandarizados.",
         ]
       }
     },
@@ -109,31 +112,23 @@ const PORTFOLIO = {
   // ── Education ──────────────────────────────────────────────
   education: [
     {
-      degree: { en: "Vocational Training — Computer Systems & Networks (SMR)", es: "FP Grado Medio — Sistemas Microinformáticos y Redes (SMR)" },
+      degree: { en: "Vocational Training - Computer Systems & Networks (SMR)", es: "FP Grado Medio - Sistemas Microinformaticos y Redes (SMR)" },
       org:    "Prometeo by the Power",
-      period: { en: "Sep 2024 — Jul 2026", es: "Sep 2024 — Jul 2026" },
+      period: { en: "Sep 2024 - Jul 2026", es: "Sep 2024 - Jul 2026" },
+      note:   { en: "Second-year average: 9.33/10 (provisional)", es: "Media segundo curso: 9.33/10 (provisional)" },
     },
   ],
 
   // ── Certifications ─────────────────────────────────────────
   certifications: [
     {
-      name:   "AWS Academy Graduate — Cloud Foundations",
+      name:   "AWS Academy Graduate - Cloud Foundations",
       issuer: "Amazon Web Services",
       date:   { en: "Nov 2025", es: "Nov 2025" },
       icon:   "fa-brands fa-aws",
       color:  "#FF9900",
       url:    "https://www.credly.com/badges/c526c760-b685-4ce8-b9aa-d0a5f85b7eb8/linked_in_profile",
       skills: ["AWS Architecture", "AWS Core Services", "AWS Pricing"],
-    },
-    {
-      name:   "Artificial Intelligence Fundamentals",
-      issuer: "IBM",
-      date:   { en: "Oct 2025", es: "Oct 2025" },
-      icon:   "fa-solid fa-brain",
-      color:  "#1F70C1",
-      url:    "https://www.credly.com/badges/67bc1ef2-f9ca-4cd5-8421-8da76d5d4edd/linked_in_profile",
-      skills: ["Machine Learning", "NLP", "Deep Learning", "Chatbots"],
     },
     {
       name:   "Linux Essentials",
@@ -154,15 +149,6 @@ const PORTFOLIO = {
       skills: ["Cisco IOS", "Network Layer Protocols"],
     },
     {
-      name:   "CCST — Operating Systems Support",
-      issuer: "Cisco",
-      date:   { en: "Aug 2025", es: "Ago 2025" },
-      icon:   "fa-solid fa-server",
-      color:  "#00BCF2",
-      url:    "https://www.credly.com/badges/e56a6777-4ee3-431e-8308-f22abb29547f/linked_in_profile",
-      skills: ["Cloud Computing", "Software Installation"],
-    },
-    {
       name:   "Networking Devices & Initial Configuration",
       issuer: "Cisco",
       date:   { en: "Oct 2024", es: "Oct 2024" },
@@ -170,15 +156,6 @@ const PORTFOLIO = {
       color:  "#00BCF2",
       url:    "https://www.credly.com/earner/earned/badge/4cd1deb7-ca22-4e54-9357-73a02940c069",
       skills: ["DHCP", "DNS", "IPv4 Subnetting", "Cisco IOS"],
-    },
-    {
-      name:   "Python Essentials 1",
-      issuer: "Cisco",
-      date:   { en: "Apr 2026", es: "Abr 2026" },
-      icon:   "fa-brands fa-python",
-      color:  "#00BCF2",
-      url:    "https://www.credly.com/earner/earned/badge/949a7e48-84f4-472f-84af-b6eda3851b05",
-      skills: ["Python", "Computer Programming", "Algorithmic Thinking", "Basic Python Programming"],
     },
     {
       name:   "EF SET English Certificate B2",
@@ -214,7 +191,7 @@ const PORTFOLIO = {
       ]
     },
     {
-      group: { en: "Infrastructure & Automation", es: "Infraestructura y Automatización" },
+      group: { en: "Infrastructure & Automation", es: "Infraestructura y Automatizacion" },
       items: [
         { name: "Bash",           icon: "fa-solid fa-terminal" },
         { name: "PowerShell",     icon: "fa-brands fa-windows" },
@@ -244,54 +221,54 @@ const PORTFOLIO = {
       name:  "Oedon PaaS",
       subtitle: { en: "Lightweight Container Orchestration Platform", es: "Plataforma Ligera de Orquestacion de Contenedores" },
       short: {
-        en: "Terminal-first, self-hosted PaaS for deploying containerised apps on minimal hardware. Manages 5+ services behind Nginx with auto-SSL, custom port knocking (Portero), automated backups to Telegram, and a single CLI entry point. Zero GUI dependencies — entire server state lives in two plain-text files.",
-        es: "PaaS auto-alojada orientada al terminal para desplegar apps en contenedores sobre hardware modesto. Gestiona 5+ servicios detrás de Nginx con SSL automático, port knocking propio (Portero), backups automáticos a Telegram y un único punto de entrada CLI. Sin dependencias de GUI — todo el estado del servidor vive en dos archivos de texto plano."
+        en: "Terminal-first, self-hosted PaaS for deploying containerised apps on minimal hardware. Manages 5+ services behind Nginx with auto-SSL, custom port knocking (Portero), automated backups to Telegram, and a single CLI entry point. Zero GUI dependencies - entire server state lives in two plain-text files.",
+        es: "PaaS auto-alojada orientada al terminal para desplegar apps en contenedores sobre hardware modesto. Gestiona 5+ servicios detras de Nginx con SSL automatico, port knocking propio (Portero), backups automaticos a Telegram y un unico punto de entrada CLI. Sin dependencias de GUI - todo el estado del servidor vive en dos archivos de texto plano."
       },
       tags: ["Shell", "Docker", "Nginx", "Python", "Fail2Ban", "WireGuard", "Bash"],
       repo: "https://github.com/MohamedKamil-hub/Oedon",
       notes: {
         en: `
 ## Why I built it
-I was frustrated with tools like Nginx Proxy Manager that hide the real error behind a GUI. I wanted full control — readable logs, copy-pasteable errors, zero management layer to update.
+I was frustrated with tools like Nginx Proxy Manager that hide the real error behind a GUI. I wanted full control - readable logs, copy-pasteable errors, zero management layer to update.
 
 ## Architecture decisions
 - **Single .env + apps.list** as source of truth. Completely versionable, no database.
 - **envsubst templates** for Nginx vhosts instead of hard-coded domains.
-- **Portero** — my own lightweight SPA (Single Packet Authorization) using HMAC-SHA256 + timestamp. Replay-proof, no compilation, pure Python systemd service. Replaces fwknop entirely.
-- **Rollback on nginx -t failure** in sync_apps.sh — previous config is restored automatically.
+- **Portero** - my own lightweight SPA (Single Packet Authorization) using HMAC-SHA256 + timestamp. Replay-proof, no compilation, pure Python systemd service. Replaces fwknop entirely.
+- **Rollback on nginx -t failure** in sync_apps.sh - previous config is restored automatically.
 - KISS principle throughout: one script per responsibility.
 
 ## Measurable outcomes
 - Reduced deployment time from manual Nginx config (~20 min per app) to a single \`oedon deploy\` command (~30 seconds).
-- Portero closes SSH to the public 100% of the time — only HMAC-authenticated knocks open it for a 60-second window.
+- Portero closes SSH to the public 100% of the time - only HMAC-authenticated knocks open it for a 60-second window.
 - Watchdog catches container failures within 5 minutes and auto-restarts them with Telegram notification.
 
 ## What I learned
 - Writing a custom UDP knock daemon from scratch taught me a lot about replay attacks and time-window validation.
 - Template-based Nginx config generation is dramatically cleaner than any GUI approach.
-- Telegram Bot API as an alerting channel is fast and free — perfect for a 1 EUR VPS.
-- The name comes from Bloodborne — a formless, invisible Great One. That is exactly what infrastructure should be.
+- Telegram Bot API as an alerting channel is fast and free - perfect for a low-cost VPS.
+- The name comes from Bloodborne - a formless, invisible Great One. That is exactly what infrastructure should be.
         `,
         es: `
 ## Por que lo construi
-Me frustraban herramientas como Nginx Proxy Manager que ocultan el error real detras de una GUI. Queria control total — logs legibles, errores que se puedan copiar, sin capa de gestion que actualizar.
+Me frustraban herramientas como Nginx Proxy Manager que ocultan el error real detras de una GUI. Queria control total - logs legibles, errores que se puedan copiar, sin capa de gestion que actualizar.
 
 ## Decisiones de arquitectura
 - **Un solo .env + apps.list** como fuente de verdad. Completamente versionable, sin base de datos.
 - **Plantillas envsubst** para vhosts de Nginx en lugar de dominios hardcodeados.
-- **Portero** — mi propio SPA (Single Packet Authorization) ligero con HMAC-SHA256 + timestamp. A prueba de replay, sin compilacion, servicio systemd en Python puro.
+- **Portero** - mi propio SPA (Single Packet Authorization) ligero con HMAC-SHA256 + timestamp. A prueba de replay, sin compilacion, servicio systemd en Python puro.
 - **Rollback automatico** si nginx -t falla en sync_apps.sh.
 - Principio KISS: un script por responsabilidad.
 
 ## Resultados medibles
-- Reduci el tiempo de despliegue de configurar Nginx manualmente (~20 min por app) a un solo comando \`oedon deploy\` (~30 segundos).
-- Portero cierra SSH al publico el 100% del tiempo — solo knocks autenticados con HMAC lo abren durante una ventana de 60 segundos.
+- Reduje el tiempo de despliegue de configurar Nginx manualmente (~20 min por app) a un solo comando \`oedon deploy\` (~30 segundos).
+- Portero cierra SSH al publico el 100% del tiempo - solo knocks autenticados con HMAC lo abren durante una ventana de 60 segundos.
 - El watchdog detecta fallos de contenedores en 5 minutos y los reinicia automaticamente con notificacion por Telegram.
 
 ## Lo que aprendi
 - Escribir un daemon UDP de knock desde cero me enseno mucho sobre ataques de replay y validacion por ventana temporal.
 - La generacion de configuracion Nginx basada en plantillas es mucho mas limpia que cualquier GUI.
-- La API del Bot de Telegram como canal de alertas es rapida y gratuita — perfecta para un VPS de 1 EUR.
+- La API del Bot de Telegram como canal de alertas es rapida y gratuita - perfecta para un VPS de bajo coste.
         `
       }
     },
@@ -300,21 +277,21 @@ Me frustraban herramientas como Nginx Proxy Manager que ocultan el error real de
       name:  "CloudHub MVP",
       subtitle: { en: "Multi-Site VPN Network Simulator", es: "Simulador de Red VPN Multi-Sede" },
       short: {
-        en: "WireGuard-based VPN lab simulating a full SMB network: central hub VPS, 3 spoke offices, 1 remote worker, and a corporate server — all with split-tunneling and Containerlab orchestration. 10/10 automated tests pass on every deployment. Built as a proof-of-concept for SECCION9's managed cybersecurity service.",
-        es: "Lab VPN basado en WireGuard que simula una red completa de PYME: hub central en VPS, 3 oficinas spoke, 1 teletrabajador y un servidor corporativo — con split-tunneling y orquestacion con Containerlab. 10/10 tests automaticos pasan en cada despliegue. Construido como prueba de concepto para el servicio de ciberseguridad gestionada de SECCION9."
+        en: "WireGuard-based VPN lab simulating a full SMB network: central hub VPS, 3 spoke offices, 1 remote worker, and a corporate server - all with split-tunneling and Containerlab orchestration. 10/10 automated tests pass on every deployment. Built as a proof-of-concept for SECCION9's managed cybersecurity service.",
+        es: "Lab VPN basado en WireGuard que simula una red completa de PYME: hub central en VPS, 3 oficinas spoke, 1 teletrabajador y un servidor corporativo - con split-tunneling y orquestacion con Containerlab. 10/10 tests automaticos pasan en cada despliegue. Construido como prueba de concepto para el servicio de ciberseguridad gestionada de SECCION9."
       },
       tags: ["WireGuard", "Docker", "Containerlab", "Shell", "iptables"],
       repo: "https://github.com/MohamedKamil-hub/cloudhub-mvp",
       notes: {
         en: `
 ## Context
-Built as the MVP for SECCION9 CONSULTORIA — a proof-of-concept for the managed cybersecurity VPN service we pitch to SMBs.
+Built as the MVP for SECCION9 CONSULTORIA - a proof-of-concept for the managed cybersecurity VPN service we pitch to SMBs.
 
 ## Architecture
-- **Hub-and-spoke WireGuard topology** entirely containerised with Containerlab — 8 nodes described in a single YAML file.
+- **Hub-and-spoke WireGuard topology** entirely containerised with Containerlab - 8 nodes described in a single YAML file.
 - **Split-tunneling**: corporate traffic goes through VPN, internet traffic exits directly. This avoids bottlenecking the VPS.
 - **Network segmentation**: each office is in its own subnet (192.168.10.x, 192.168.11.x, 192.168.20.x), only reachable via the hub.
-- Corporate server (10.10.100.200) is completely isolated — unreachable without being in the VPN.
+- Corporate server (10.10.100.200) is completely isolated - unreachable without being in the VPN.
 
 ## Key challenge
 Getting split-tunneling right in a Docker network environment required careful iptables rules. The \`AllowedIPs\` field in WireGuard is what makes or breaks this.
@@ -327,13 +304,13 @@ Containerlab is an underrated tool for rapidly prototyping network topologies. O
         `,
         es: `
 ## Contexto
-Construido como MVP para SECCION9 CONSULTORIA — una prueba de concepto para el servicio VPN de ciberseguridad gestionada que ofrecemos a PYMEs.
+Construido como MVP para SECCION9 CONSULTORIA - una prueba de concepto para el servicio VPN de ciberseguridad gestionada que ofrecemos a PYMEs.
 
 ## Arquitectura
-- **Topologia hub-and-spoke con WireGuard** completamente contenerizada con Containerlab — 8 nodos descritos en un solo archivo YAML.
+- **Topologia hub-and-spoke con WireGuard** completamente contenerizada con Containerlab - 8 nodos descritos en un solo archivo YAML.
 - **Split-tunneling**: trafico corporativo va por VPN, trafico a internet sale directo. Evita cuellos de botella en el VPS.
 - **Segmentacion de red**: cada oficina en su propia subred, solo accesible desde el hub.
-- El servidor corporativo (10.10.100.200) esta completamente aislado — inaccesible sin estar en la VPN.
+- El servidor corporativo (10.10.100.200) esta completamente aislado - inaccesible sin estar en la VPN.
 
 ## Reto principal
 Conseguir que el split-tunneling funcionase correctamente en Docker requirio reglas iptables cuidadosas. El campo \`AllowedIPs\` de WireGuard es critico.
@@ -351,77 +328,77 @@ Containerlab es una herramienta infravalorada para prototipar topologias de red 
       name:  "Seccion9 Secure Hub",
       subtitle: { en: "VPN Management Panel with REST API", es: "Panel de Gestion VPN con API REST" },
       short: {
-        en: "VPN management panel built from scratch for real SMB deployments. FastAPI + vanilla JS + Nginx, state in JSON files with atomic writes — no database, no runtime overhead, runs on a 512 MB VPS as a single systemd service. Security: bcrypt, JWT, sliding-window brute-force lockout per IP, Fail2ban, shell-injection-safe input sanitisation, per-endpoint rate limiting, full audit log. Features multi-role access control (admin / technician / viewer), QR provisioning, site-to-site hub-and-spoke with auto-generated WireGuard configs and PowerShell NAT script for Windows gateways, real-time traffic metrics from kernel counters, and an idempotent RAM-aware installer. 40 simultaneous clients, under 50 ms latency.",
-        es: "Panel de gestión VPN construido desde cero para despliegues reales en PYMEs. FastAPI + vanilla JS + Nginx, estado en ficheros JSON con escrituras atómicas — sin base de datos, sin overhead de runtime, funciona en un VPS de 512 MB como un único servicio systemd. Seguridad: bcrypt, JWT, bloqueo por ventana deslizante por IP, Fail2ban, sanitización segura contra inyección de shell, rate limiting por endpoint, log de auditoría completo. Funcionalidades: control de acceso por roles (admin / técnico / viewer), provisioning con QR, site-to-site hub-and-spoke con configs WireGuard autogeneradas y script PowerShell de NAT para Windows, métricas en tiempo real desde contadores del kernel, e instalador idempotente que escala según la RAM. 40 clientes simultáneos, menos de 50 ms de latencia."
+        en: "VPN management panel built from scratch for real SMB deployments. FastAPI + vanilla JS + Nginx, state in JSON files with atomic writes - no database, no runtime overhead, runs on a 512 MB VPS as a single systemd service. Security: bcrypt, JWT, sliding-window brute-force lockout per IP, Fail2ban, shell-injection-safe input sanitisation, per-endpoint rate limiting, full audit log. Features multi-role access control (admin / technician / viewer), QR provisioning, site-to-site hub-and-spoke with auto-generated WireGuard configs and PowerShell NAT script for Windows gateways, real-time traffic metrics from kernel counters, and an idempotent RAM-aware installer. 40 simultaneous clients, under 50 ms latency.",
+        es: "Panel de gestion VPN construido desde cero para despliegues reales en PYMEs. FastAPI + vanilla JS + Nginx, estado en ficheros JSON con escrituras atomicas - sin base de datos, sin overhead de runtime, funciona en un VPS de 512 MB como un unico servicio systemd. Seguridad: bcrypt, JWT, bloqueo por ventana deslizante por IP, Fail2ban, sanitizacion segura contra inyeccion de shell, rate limiting por endpoint, log de auditoria completo. Funcionalidades: control de acceso por roles (admin / tecnico / viewer), provisioning con QR, site-to-site hub-and-spoke con configs WireGuard autogeneradas y script PowerShell de NAT para Windows, metricas en tiempo real desde contadores del kernel, e instalador idempotente que escala segun la RAM. 40 clientes simultaneos, menos de 50 ms de latencia."
       },
       tags: ["WireGuard", "OpenVPN", "FastAPI", "Python", "Nginx", "Bash", "PowerShell", "iptables", "systemd", "JWT"],
       repo: "https://github.com/MohamedKamil-hub/Seccion9-Secure-Hub",
       notes: {
         en: `
 ## What it solves
-SMBs with restrictive firewalls (Cisco ASA, Fortinet, SonicWall) can't use WireGuard's UDP. OpenVPN over TCP/443 bypasses this — from the outside it looks like HTTPS traffic. The panel manages both stacks from one interface.
+SMBs with restrictive firewalls (Cisco ASA, Fortinet, SonicWall) can't use WireGuard's UDP. OpenVPN over TCP/443 bypasses this - from the outside it looks like HTTPS traffic. The panel manages both stacks from one interface.
 
 ## Architecture
-- **Zero-dependency design** — FastAPI + vanilla JS + Nginx. The entire stack is a Python process behind a reverse proxy, managed by systemd. No container runtime, no database engine, nothing to update or restart except the service itself. This makes it deployable on any Linux VPS with 512 MB RAM.
-- **RAM-aware scaling** — install.sh detects available memory and sets uvicorn worker count, memory limits, and cache TTLs accordingly. The same binary behaves correctly on a 512 MB or a 4 GB machine without any manual tuning.
-- **Atomic state** — all data (users, clients, invites, sites, settings) lives in JSON files. Writes go to a .tmp file first, then renamed — kernel-level atomicity, no partial writes on crash.
-- **In-memory ring buffers** — traffic history and audit events are kept in RAM-sized ring buffers. Hours of metrics available without any disk I/O or log rotation to manage. A background thread polls WireGuard's kernel interface every 30 seconds to compute transfer deltas.
-- **Kernel-friendly caching** — wg_cache.py batches all wg show calls and caches results with a RAM-scaled TTL. Prevents hammering the WireGuard kernel module under load.
-- **Idempotent installer** — install.sh can be re-run without destroying existing config. Uses iptables -C before adding any rule, preserves WireGuard keys and user data across reinstalls.
+- **Zero-dependency design** - FastAPI + vanilla JS + Nginx. The entire stack is a Python process behind a reverse proxy, managed by systemd. No container runtime, no database engine, nothing to update or restart except the service itself. This makes it deployable on any Linux VPS with 512 MB RAM.
+- **RAM-aware scaling** - install.sh detects available memory and sets uvicorn worker count, memory limits, and cache TTLs accordingly. The same binary behaves correctly on a 512 MB or a 4 GB machine without any manual tuning.
+- **Atomic state** - all data (users, clients, invites, sites, settings) lives in JSON files. Writes go to a .tmp file first, then renamed - kernel-level atomicity, no partial writes on crash.
+- **In-memory ring buffers** - traffic history and audit events are kept in RAM-sized ring buffers. Hours of metrics available without any disk I/O or log rotation to manage. A background thread polls WireGuard's kernel interface every 30 seconds to compute transfer deltas.
+- **Kernel-friendly caching** - wg_cache.py batches all wg show calls and caches results with a RAM-scaled TTL. Prevents hammering the WireGuard kernel module under load.
+- **Idempotent installer** - install.sh can be re-run without destroying existing config. Uses iptables -C before adding any rule, preserves WireGuard keys and user data across reinstalls.
 
 ## Security
 - Installer generates a random SECRET_KEY (openssl rand -hex 32) and forces a strong admin password on first run. No defaults.
 - bcrypt with 12 salt rounds for password storage.
 - JWT access tokens with configurable short expiry.
 - Sliding-window brute-force lockout tracked per source IP in memory.
-- Fail2ban jail watches Nginx logs for 401s on the login endpoint — persistent blocking at the firewall level.
+- Fail2ban jail watches Nginx logs for 401s on the login endpoint - persistent blocking at the firewall level.
 - sanitize.py validates every input: client names, CIDR subnets, interface names, invite tokens, DNS lists. Rejects path traversal sequences and shell metacharacters before they reach any subprocess call.
 - Dedicated rate_limit.py for login, password change, and invite creation endpoints.
-- Every sensitive action — client create/delete, password change, site assignment, role change — is logged with timestamp, actor, role, target, and source IP.
+- Every sensitive action - client create/delete, password change, site assignment, role change - is logged with timestamp, actor, role, target, and source IP.
 - Nginx adds HSTS, CSP, and X-Frame-Options headers. Panel forces HTTPS. Installer warns if the WireGuard UDP port is blocked by a cloud provider firewall.
 
 ## Features
-- **Client management** — add/delete peers, download .conf or scan QR, toggle between split-tunnel (VPN subnet + assigned site LANs) and full-tunnel (0.0.0.0/0).
-- **Invite system** — JWT-signed single-use links with configurable expiry. Public onboarding page displays QR code for mobile clients. Can auto-create the peer or distribute a pre-existing config.
-- **Site-to-site** — register remote Linux or Windows gateways. Panel generates WireGuard peer configs and automatically adds the site's LAN subnet to AllowedIPs. For Windows: provides a PowerShell script that enables IP forwarding and NAT.
-- **Access control** — three roles: admin (full access), technician (clients and invites, no settings or user management), viewer (read-only).
-- **Traffic metrics** — per-client graphs, active sessions, connection history, all derived from WireGuard's transfer counters and latest-handshake timestamps.
-- **Backup and restore** — backup.sh packs .env, data/, and wg0.conf into a single archive. restore.sh unpacks it before a fresh install. Straightforward migration path between VPS providers.
+- **Client management** - add/delete peers, download .conf or scan QR, toggle between split-tunnel (VPN subnet + assigned site LANs) and full-tunnel (0.0.0.0/0).
+- **Invite system** - JWT-signed single-use links with configurable expiry. Public onboarding page displays QR code for mobile clients. Can auto-create the peer or distribute a pre-existing config.
+- **Site-to-site** - register remote Linux or Windows gateways. Panel generates WireGuard peer configs and automatically adds the site's LAN subnet to AllowedIPs. For Windows: provides a PowerShell script that enables IP forwarding and NAT.
+- **Access control** - three roles: admin (full access), technician (clients and invites, no settings or user management), viewer (read-only).
+- **Traffic metrics** - per-client graphs, active sessions, connection history, all derived from WireGuard's transfer counters and latest-handshake timestamps.
+- **Backup and restore** - backup.sh packs .env, data/, and wg0.conf into a single archive. restore.sh unpacks it before a fresh install. Straightforward migration path between VPS providers.
 
 ## Performance
-40 simultaneous clients sustained on 800 MB RAM and 1 vCPU — under 50 ms latency, 99.5% uptime.
+40 simultaneous clients sustained on 800 MB RAM and 1 vCPU - under 50 ms latency, 99.5% uptime.
         `,
         es: `
 ## Que resuelve
-Las PYMEs con firewalls restrictivos (Cisco ASA, Fortinet, SonicWall) no pueden usar UDP de WireGuard. OpenVPN sobre TCP/443 lo soluciona — desde fuera el trafico parece HTTPS. El panel gestiona ambos stacks desde una sola interfaz.
+Las PYMEs con firewalls restrictivos (Cisco ASA, Fortinet, SonicWall) no pueden usar UDP de WireGuard. OpenVPN sobre TCP/443 lo soluciona - desde fuera el trafico parece HTTPS. El panel gestiona ambos stacks desde una sola interfaz.
 
 ## Arquitectura
-- **Diseno minimalista** — FastAPI + vanilla JS + Nginx. Todo el stack es un proceso Python detras de un proxy inverso, gestionado por systemd. Desplegable en cualquier VPS Linux con 512 MB RAM.
-- **Escalado segun RAM** — install.sh detecta la memoria disponible y configura workers de uvicorn, limites de memoria y TTLs de cache. El mismo binario funciona correctamente en 512 MB o 4 GB sin ajuste manual.
-- **Estado atomico** — todos los datos (usuarios, clientes, invitaciones, sitios, configuracion) viven en ficheros JSON. Las escrituras van primero a un .tmp y se renombran — atomicidad a nivel de kernel, sin escrituras parciales en caso de fallo.
-- **Ring buffers en memoria** — historial de trafico y eventos de auditoria en buffers dimensionados segun RAM. Horas de metricas sin I/O a disco ni rotacion de logs. Hilo en segundo plano que consulta la interfaz WireGuard cada 30 segundos para calcular deltas de transferencia.
-- **Cache de kernel** — wg_cache.py agrupa las llamadas a wg show y cachea los resultados con un TTL escalado a la RAM. Evita saturar el modulo del kernel bajo carga.
-- **Instalador idempotente** — install.sh puede reejecutarse sin destruir la configuracion existente. Usa iptables -C antes de anadir cualquier regla, preserva claves WireGuard y datos de usuarios entre reinstalaciones.
+- **Diseno minimalista** - FastAPI + vanilla JS + Nginx. Todo el stack es un proceso Python detras de un proxy inverso, gestionado por systemd. Desplegable en cualquier VPS Linux con 512 MB RAM.
+- **Escalado segun RAM** - install.sh detecta la memoria disponible y configura workers de uvicorn, limites de memoria y TTLs de cache. El mismo binario funciona correctamente en 512 MB o 4 GB sin ajuste manual.
+- **Estado atomico** - todos los datos (usuarios, clientes, invitaciones, sitios, configuracion) viven en ficheros JSON. Las escrituras van primero a un .tmp y se renombran - atomicidad a nivel de kernel, sin escrituras parciales en caso de fallo.
+- **Ring buffers en memoria** - historial de trafico y eventos de auditoria en buffers dimensionados segun RAM. Horas de metricas sin I/O a disco ni rotacion de logs. Hilo en segundo plano que consulta la interfaz WireGuard cada 30 segundos para calcular deltas de transferencia.
+- **Cache de kernel** - wg_cache.py agrupa las llamadas a wg show y cachea los resultados con un TTL escalado a la RAM. Evita saturar el modulo del kernel bajo carga.
+- **Instalador idempotente** - install.sh puede reejecutarse sin destruir la configuracion existente. Usa iptables -C antes de anadir cualquier regla, preserva claves WireGuard y datos de usuarios entre reinstalaciones.
 
 ## Seguridad
 - El instalador genera un SECRET_KEY aleatorio (openssl rand -hex 32) y fuerza una contrasena admin fuerte en el primer arranque. Sin valores por defecto.
 - bcrypt con 12 rondas de sal para almacenamiento de contrasenas.
 - JWT con expiracion corta configurable.
 - Bloqueo por ventana deslizante por IP de origen, en memoria.
-- Jaula Fail2ban que monitoriza los logs de Nginx en busca de 401s en el endpoint de login — bloqueo persistente a nivel de firewall.
+- Jaula Fail2ban que monitoriza los logs de Nginx en busca de 401s en el endpoint de login - bloqueo persistente a nivel de firewall.
 - sanitize.py valida cada entrada: nombres de cliente, subredes CIDR, nombres de interfaz, tokens de invitacion, listas DNS. Rechaza secuencias de path traversal y metacaracteres de shell antes de que lleguen a cualquier llamada subprocess.
 - Log de auditoria de cada accion sensible: timestamp, actor, rol, objetivo e IP de origen.
 
 ## Funcionalidades
-- **Gestion de clientes** — anadir/eliminar peers, descargar .conf o escanear QR, alternar entre split-tunnel y full-tunnel.
-- **Sistema de invitaciones** — enlaces JWT de un solo uso con expiracion configurable. Pagina publica de onboarding con QR para clientes moviles.
-- **Site-to-site** — registrar gateways remotos Linux o Windows. El panel genera configs de peer y anade automaticamente la subred LAN del sitio a AllowedIPs. Para Windows: script PowerShell que habilita reenvio IP y NAT.
-- **Control de acceso** — tres roles: admin (acceso completo), tecnico (clientes e invitaciones, sin configuracion ni usuarios), viewer (solo lectura).
-- **Metricas de trafico** — graficas por cliente, sesiones activas, historial de conexiones, todo derivado de los contadores de transferencia de WireGuard.
-- **Backup y restauracion** — backup.sh empaqueta .env, data/ y wg0.conf en un archivo. restore.sh lo desempaqueta antes de una instalacion limpia.
+- **Gestion de clientes** - anadir/eliminar peers, descargar .conf o escanear QR, alternar entre split-tunnel y full-tunnel.
+- **Sistema de invitaciones** - enlaces JWT de un solo uso con expiracion configurable. Pagina publica de onboarding con QR para clientes moviles.
+- **Site-to-site** - registrar gateways remotos Linux o Windows. El panel genera configs de peer y anade automaticamente la subred LAN del sitio a AllowedIPs. Para Windows: script PowerShell que habilita reenvio IP y NAT.
+- **Control de acceso** - tres roles: admin (acceso completo), tecnico (clientes e invitaciones, sin configuracion ni usuarios), viewer (solo lectura).
+- **Metricas de trafico** - graficas por cliente, sesiones activas, historial de conexiones, todo derivado de los contadores de transferencia de WireGuard.
+- **Backup y restauracion** - backup.sh empaqueta .env, data/ y wg0.conf en un archivo. restore.sh lo desempaqueta antes de una instalacion limpia.
 
 ## Rendimiento
-40 clientes simultaneos en 800 MB RAM y 1 vCPU — menos de 50 ms de latencia, 99.5% de uptime.
+40 clientes simultaneos en 800 MB RAM y 1 vCPU - menos de 50 ms de latencia, 99.5% de uptime.
         `
       }
     },
@@ -430,8 +407,8 @@ Las PYMEs con firewalls restrictivos (Cisco ASA, Fortinet, SonicWall) no pueden 
       name:  "Nebula Nano-PaaS",
       subtitle: { en: "Embedded Systems Monitor & Deployment Engine", es: "Monitor de Sistemas Embebido y Motor de Despliegue" },
       short: {
-        en: "Ultra-lightweight self-hosted PaaS. Core system runs on under 20 MB of RAM. Features Nebula Pulse, a custom Go-based system monitor that replaced a Python+Netdata stack, cutting monitoring RAM usage from ~500 MB to ~10 MB — a 95% reduction. Predecessor to Oedon PaaS.",
-        es: "PaaS auto-alojada ultra-ligera. El nucleo usa menos de 20 MB de RAM. Incluye Nebula Pulse, un monitor de sistema propio en Go que reemplazo un stack Python+Netdata, reduciendo el consumo de RAM de monitorizacion de ~500 MB a ~10 MB — una reduccion del 95%. Predecesor de Oedon PaaS."
+        en: "Ultra-lightweight self-hosted PaaS. Core system runs on under 20 MB of RAM. Features Nebula Pulse, a custom Go-based system monitor that replaced a Python+Netdata stack, cutting monitoring RAM usage from ~500 MB to ~10 MB - a 95% reduction. Predecessor to Oedon PaaS.",
+        es: "PaaS auto-alojada ultra-ligera. El nucleo usa menos de 20 MB de RAM. Incluye Nebula Pulse, un monitor de sistema propio en Go que reemplazo un stack Python+Netdata, reduciendo el consumo de RAM de monitorizacion de ~500 MB a ~10 MB - una reduccion del 95%. Predecesor de Oedon PaaS."
       },
       tags: ["Go", "Docker", "Python", "Nginx", "Shell", "Fail2Ban", "HTML/CSS"],
       repo: "https://github.com/MohamedKamil-hub/Nano-Paas",
@@ -440,7 +417,7 @@ Las PYMEs con firewalls restrictivos (Cisco ASA, Fortinet, SonicWall) no pueden 
 ## The problem
 I needed a PaaS that runs on a Raspberry Pi or a 512 MB VPS. Coolify needs 2 GB+ just for the dashboard. Heroku costs money. I built Nebula.
 
-## Nebula Pulse — the Go rewrite
+## Nebula Pulse - the Go rewrite
 Originally monitored with Python + standard tools. RAM usage: ~500 MB. Rewrote the monitor in Go as a single static binary. New RAM usage: ~10 MB. 95% reduction. Why Go? Single binary, no runtime, instant startup, zero external dependencies. Perfect for resource-constrained hardware.
 
 ## What it does
@@ -450,7 +427,7 @@ Originally monitored with Python + standard tools. RAM usage: ~500 MB. Rewrote t
 - Nebula Pulse streams system telemetry (CPU, RAM, Docker state) to a terminal dashboard.
 
 ## Predecessor to Oedon
-Nano-PaaS was the prototype. Oedon is the production-grade evolution — cleaner architecture, better CLI, custom port knocking, and no Nginx Proxy Manager dependency.
+Nano-PaaS was the prototype. Oedon is the production-grade evolution - cleaner architecture, better CLI, custom port knocking, and no Nginx Proxy Manager dependency.
 
 ## Lesson
 Writing a monitoring tool in Go for the first time forced me to learn goroutines, channels, and syscall-level resource reading. The \`/proc\` filesystem is surprisingly rich.
@@ -459,7 +436,7 @@ Writing a monitoring tool in Go for the first time forced me to learn goroutines
 ## El problema
 Necesitaba una PaaS que funcionase en una Raspberry Pi o un VPS de 512 MB. Coolify necesita 2 GB+ solo para el panel. Heroku cuesta dinero. Construi Nebula.
 
-## Nebula Pulse — la reescritura en Go
+## Nebula Pulse - la reescritura en Go
 Originalmente monitorizaba con Python + herramientas estandar. Consumo de RAM: ~500 MB. Reescribi el monitor en Go como un unico binario estatico. Nuevo consumo: ~10 MB. Reduccion del 95%. Por que Go? Binario unico, sin runtime, arranque instantaneo, sin dependencias externas.
 
 ## Que hace
@@ -469,7 +446,7 @@ Originalmente monitorizaba con Python + herramientas estandar. Consumo de RAM: ~
 - Nebula Pulse transmite telemetria del sistema a un dashboard de terminal.
 
 ## Predecesor de Oedon
-Nano-PaaS fue el prototipo. Oedon es la evolucion para produccion — arquitectura mas limpia, mejor CLI, port knocking propio y sin dependencia de Nginx Proxy Manager.
+Nano-PaaS fue el prototipo. Oedon es la evolucion para produccion - arquitectura mas limpia, mejor CLI, port knocking propio y sin dependencia de Nginx Proxy Manager.
 
 ## Leccion
 Escribir una herramienta de monitorizacion en Go me obligo a aprender goroutines, channels y lectura de recursos a nivel syscall. El sistema de archivos \`/proc\` es sorprendentemente rico.
@@ -484,9 +461,10 @@ Escribir una herramienta de monitorizacion en Go me obligo a aprender goroutines
       "nav.home":        "Home",
       "nav.resume":      "Resume",
       "nav.projects":    "Projects",
+      "hero.home":       "whoami",
       "hero.greeting":   "whoami",
-      "hero.role":       "Infrastructure Engineer",
-      "hero.bio":        "Finishing SMR in Toledo. During my internship I built a WireGuard management panel from scratch — no Docker, no React, just Bash and Python on a 512 MB VPS. 40 simultaneous clients, under 50 ms latency. I also worked with the WAF and backup teams in a 20-person environment. Currently freelancing on infrastructure setups and looking for a role where I can keep building real things.",
+      "hero.role":       "Systems Technician - SMR student",
+      "hero.bio":        "Finishing SMR in Toledo (second-year average 9.33/10). During my internship I built a production WireGuard management panel from scratch - FastAPI, Python and Bash on a 512 MB VPS. 40 simultaneous clients, under 50 ms latency. Currently doing IT support at Randstad Digital on the Amazon-CEVA Logistics deployment in Ontigola. Looking for a role where I can keep working on real Linux infrastructure.",
       "hero.cta.email":  "Email me",
       "hero.cta.cv":     "Download CV",
       "hero.photo":      "Add your photo here",
@@ -495,6 +473,7 @@ Escribir una herramienta de monitorizacion en Go me obligo a aprender goroutines
       "resume.edu":      "Education",
       "resume.certs":    "Certifications",
       "resume.skills":   "Skills",
+      "resume.certs.more": "View all certifications on Credly",
       "projects.title":  "Projects",
       "btn.repo":        "GitHub Repo",
       "btn.notes":       "Dev Notes",
@@ -505,9 +484,10 @@ Escribir una herramienta de monitorizacion en Go me obligo a aprender goroutines
       "nav.home":        "Inicio",
       "nav.resume":      "Curriculum",
       "nav.projects":    "Proyectos",
+      "hero.home":       "whoami",
       "hero.greeting":   "whoami",
-      "hero.role":       "Ingeniero de Infraestructura",
-      "hero.bio":        "Terminando SMR en Toledo. En mis prácticas construí un panel de gestión WireGuard desde cero — sin Docker, sin React, solo Bash y Python en un VPS de 512 MB. 40 clientes simultáneos, menos de 50 ms de latencia. También trabajé con los equipos de WAF y backups en un entorno de 20 personas. Actualmente hago freelance en configuraciones de infraestructura y busco un puesto donde seguir construyendo cosas reales.",
+      "hero.role":       "Tecnico de Sistemas - estudiante SMR",
+      "hero.bio":        "Terminando SMR en Toledo (media segundo curso 9.33/10). En mis practicas construi un panel de gestion WireGuard en produccion - FastAPI, Python y Bash en un VPS de 512 MB. 40 clientes simultaneos, menos de 50 ms de latencia. Actualmente en soporte IT en Randstad Digital, en el despliegue Amazon-CEVA Logistics en Ontigola. Busco un puesto donde seguir trabajando con infraestructura Linux real.",
       "hero.cta.email":  "Escribeme",
       "hero.cta.cv":     "Descargar CV",
       "hero.photo":      "Anade tu foto aqui",
@@ -516,6 +496,7 @@ Escribir una herramienta de monitorizacion en Go me obligo a aprender goroutines
       "resume.edu":      "Formacion",
       "resume.certs":    "Certificaciones",
       "resume.skills":   "Habilidades",
+      "resume.certs.more": "Ver todas las certificaciones en Credly",
       "projects.title":  "Proyectos",
       "btn.repo":        "Repositorio",
       "btn.notes":       "Notas dev",
