@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohamed Kamil El Kouarti Mechhidan — Infrastructure Engineer | Ocaña, Spain</title>
-  <meta name="description" content="Portfolio of Mohamed Kamil El Kouarti Mechhidan — Infrastructure Engineer specializing in WireGuard, VPN, Linux, Bash, Python, FastAPI. Based in Toledo, Spain." />
-  <meta property="og:title" content="Mohamed Kamil El Kouarti Mechhidan — Infrastructure Engineer" />
-  <meta property="og:description" content="Infrastructure Engineer. WireGuard, Docker, Linux, Bash, Python. Toledo, Spain." />
+  <title>Mohamed Kamil El Kouarti Mechhidan - Systems Technician | Toledo, Spain</title>
+  <meta name="description" content="Portfolio of Mohamed Kamil El Kouarti Mechhidan - Systems Technician (SMR student) specializing in Linux, WireGuard, Bash, Python, FastAPI. Based in Toledo, Spain." />
+  <meta property="og:title" content="Mohamed Kamil El Kouarti Mechhidan - Systems Technician" />
+  <meta property="og:description" content="Systems Technician. Linux, WireGuard, Docker, Bash, Python. Toledo, Spain." />
   <meta property="og:type" content="website" />
 
   <meta name="author" content="Mohamed Kamil El Kouarti Mechhidan" />
-  <meta name="google-site-verification" content="816b3b366f4fe226" />  
-<!-- Fonts -->
+  <meta name="google-site-verification" content="816b3b366f4fe226" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
@@ -48,15 +52,8 @@
       <div class="hero-text">
         <p class="hero-pre"><span class="prompt">~/</span> <span class="cmd" data-i18n="hero.greeting">whoami</span></p>
         <h1 class="hero-name">Mohamed Kamil<br /><span class="hero-surname">El Kouarti</span></h1>
-        <p class="hero-role" data-i18n="hero.role">Systems & DevOps Engineer</p>
-        <p class="hero-bio" data-i18n="hero.bio">
-          I build infrastructure that stays out of the way. Self-hosted platforms,
-          zero-trust VPN networks, automation scripts — if it runs in a terminal,
-          I'm probably already writing it. I kept 40 users connected through a VPN
-          gateway on a 1 EUR server because constraints are more fun than budgets.
-          Based in Toledo, finishing my CS degree, and looking for a team that cares
-          about doing things right.
-        </p>
+        <p class="hero-role" data-i18n="hero.role">Systems Technician - SMR student</p>
+        <p class="hero-bio" data-i18n="hero.bio"></p>
 
         <div class="hero-cta">
           <button class="btn btn-primary" id="email-copy-btn">
@@ -106,24 +103,12 @@
       <h2 data-i18n="resume.title">Resume</h2>
     </div>
 
-    <div class="resume-grid">
-
-      <!-- Experience -->
-      <div class="resume-col">
-        <h3 class="col-label" data-i18n="resume.exp">Experience</h3>
-        <div class="timeline" id="timeline-exp">
-          <!-- filled by JS -->
-        </div>
+    <!-- Experience (full width) -->
+    <div class="resume-col resume-col-full">
+      <h3 class="col-label" data-i18n="resume.exp">Experience</h3>
+      <div class="timeline" id="timeline-exp">
+        <!-- filled by JS -->
       </div>
-
-      <!-- Education -->
-      <div class="resume-col">
-        <h3 class="col-label" data-i18n="resume.edu">Education</h3>
-        <div class="timeline" id="timeline-edu">
-          <!-- filled by JS -->
-        </div>
-      </div>
-
     </div>
 
     <!-- Certifications -->
@@ -132,12 +117,26 @@
       <div class="certs-grid" id="certs-grid">
         <!-- filled by JS -->
       </div>
+      <p class="certs-more">
+        <a id="credly-link" href="https://www.credly.com/users/mohamed-kamil-el-kouarti-mechhidan" target="_blank" rel="noopener">
+          <i class="fa-solid fa-arrow-right"></i>
+          <span data-i18n="resume.certs.more">View all certifications on Credly</span>
+        </a>
+      </p>
     </div>
 
     <!-- Skills -->
     <div class="skills-block">
       <h3 class="col-label" data-i18n="resume.skills">Skills</h3>
       <div class="skills-grid" id="skills-grid">
+        <!-- filled by JS -->
+      </div>
+    </div>
+
+    <!-- Education (moved below) -->
+    <div class="edu-block">
+      <h3 class="col-label" data-i18n="resume.edu">Education</h3>
+      <div class="timeline" id="timeline-edu">
         <!-- filled by JS -->
       </div>
     </div>
@@ -159,14 +158,14 @@
     <p>
       <span class="prompt">~/</span>
       <span data-i18n="footer.made">Built by</span>
-      <strong>Mohamed Kamil</strong> — 2026
+      <strong>Mohamed Kamil</strong> - <span id="footer-year"></span>
     </p>
     <p class="footer-links">
       <a href="mailto:kouartimohamedkamil@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/elkouarti/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://github.com/MohamedKamil-hub" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="https://x.com/kamilka_hub" target="_blank" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-      <a href="https://www.credly.com/users/mohamed-kamil-el-kouarti-mechhidan" target="_blank" title="Credly"><i class="fa-solid fa-certificate"></i></a>
+      <a href="https://www.linkedin.com/in/elkouarti/" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/MohamedKamil-hub" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://dev.to/mohamedkamil" target="_blank" rel="noopener" title="dev.to"><i class="fa-brands fa-dev"></i></a>
+      <a href="https://www.credly.com/users/mohamed-kamil-el-kouarti-mechhidan" target="_blank" rel="noopener" title="Credly"><i class="fa-solid fa-certificate"></i></a>
     </p>
   </footer>
 
